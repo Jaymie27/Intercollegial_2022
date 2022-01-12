@@ -16,16 +16,28 @@ public class PlayerDetectionZone : Area2D
 		return player != null;
 	}
 	
-	private void _on_PlayerDetectionZone_body_entered(object body)
+	private void _on_PlayerDetectionZone_body_entered(KinematicBody2D body)
 	{
-		player = (KinematicBody2D)body;
+		GD.Print("work");
+		player = body;
 	}
 	
 	private void _on_PlayerDetectionZone_body_exited(object body)
 	{
 		player = null;
 	}
+	
+
 }
+
+
+
+
+
+
+
+
+
 
 
 

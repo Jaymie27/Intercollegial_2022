@@ -16,7 +16,10 @@ public class MC : KinematicBody2D
 	AnimationNodeStateMachinePlayback animationState;
 
   	bool inverted = false;
+	
+	bool released = true;
 
+	public static Vector2 pos;
 
 	public static float DirectionX;
 	public static float DirectionY;
@@ -36,6 +39,7 @@ public class MC : KinematicBody2D
 		animationPlayer = GetNode<AnimationPlayer>("AnimationPlayer");
 		animationTree = GetNode<AnimationTree>("AnimationTree");
 		animationState = (AnimationNodeStateMachinePlayback)animationTree.Get("parameters/playback");
+		pos = this.GlobalPosition;
 	}
 
 
@@ -50,7 +54,8 @@ public class MC : KinematicBody2D
 	}
 
   	public override void _PhysicsProcess(float delta)
-  	{		  
+  	{	
+		pos = this.GlobalPosition;	  
 		switch(state){
 			case State.MOVE:
 				move_state(delta);
@@ -67,9 +72,44 @@ public class MC : KinematicBody2D
 	
 	private void move_state(float delta)
 	{		
-		var input_vector = GetInput();
+		 var input_vector = GetInput();
 		
 		
+		
+			if(Input.IsActionPressed("ui_attack"))
+			{
+				if(released == true)
+				{
+					if(inverted == true)
+					{
+						state = State.PICKUP;
+					}
+					else
+					{
+						state = State.ATTACK;
+					}
+					released = false;
+				}
+			}
+			else if(Input.IsActionPressed("pup"))
+			{
+				if(released == true)
+				{
+					if(inverted == true)
+					{
+						state = State.ATTACK;
+					}
+					else
+					{
+						state = State.PICKUP;
+					}
+					released = false;
+				}
+			}
+			else
+			{
+				released = true;
+			}
 		if(input_vector != Vector2.Zero)
 		{
 			animationTree.Set("parameters/Idle/blend_position", input_vector);
@@ -78,38 +118,12 @@ public class MC : KinematicBody2D
 			animationState.Travel("Run");
 			
 			
-			Velocity = Velocity.MoveToward(input_vector * MAXSPEED, ACCELERATION * delta);	
+			Velocity = Velocity.MoveToward(input_vector * MAXSPEED, ACCELERATION * delta);    
 		}
-		
-		else{
-			
-			if(Input.IsActionJustReleased("ui_attack"))
-			{
-				if(inverted)
-				{
-					state = State.PICKUP;
-				}
-				else
-				{
-					state = State.ATTACK;
-				}			
-			}
-			else if(Input.IsActionJustReleased("pup"))
-			{
-				if(inverted)
-				{
-					state = State.ATTACK;
-				}
-				else
-				{
-					state = State.PICKUP;
-				}
-			}
-			else
-			{
-				animationState.Travel("Idle");
-			}
+		else
+		{
 			Velocity = Velocity.MoveToward(Vector2.Zero, FRICTION * delta);
+			animationState.Travel("Idle");
 		}
 		
 		DirectionX = Velocity.x;

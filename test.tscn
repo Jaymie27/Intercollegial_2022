@@ -8,5 +8,5 @@
 [node name="Bandits" parent="." instance=ExtResource( 2 )]
 position = Vector2( -81.4281, -6.59898 )
 
-[node name="MC" parent="Bandits" instance=ExtResource( 1 )]
-position = Vector2( 279.702, -3.77976 )
+[node name="MC" parent="." instance=ExtResource( 1 )]
+position = Vector2( 198.274, -10.3787 )

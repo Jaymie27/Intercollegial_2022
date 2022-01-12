@@ -1,4 +1,4 @@
-[gd_scene load_steps=58 format=2]
+[gd_scene load_steps=59 format=2]
 
 [ext_resource path="res://HUD/HUD.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Hitbox&Hurtbox/Hitbox.tscn" type="PackedScene" id=2]
@@ -517,6 +517,10 @@ graph_offset = Vector2( -158.72, 32.3665 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=52]
 
+[sub_resource type="CapsuleShape2D" id=53]
+radius = 11.3073
+height = 29.9351
+
 [node name="MC" type="KinematicBody2D"]
 collision_layer = 2
 script = ExtResource( 5 )
@@ -524,7 +528,7 @@ script = ExtResource( 5 )
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 4 )
 hframes = 34
-frame = 21
+frame = 20
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 "anims/Attack Down" = SubResource( 1 )
@@ -581,5 +585,12 @@ collision_mask = 0
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 
+[node name="ennemyDetector" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ennemyDetector"]
+position = Vector2( -1.5892, 0.264866 )
+shape = SubResource( 53 )
+
 [editable path="HitboxPivot/Hitbox"]
+
 [editable path="Hurtbox"]
