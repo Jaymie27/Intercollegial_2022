@@ -1,9 +1,9 @@
 {
 	"textures": [
 		{
-			"image": "MC.png",
+			"image": "Enemies.png",
 			"size": {
-				"w": 1700,
+				"w": 1800,
 				"h": 50
 			},
 			"sprites": [
@@ -188,7 +188,7 @@
 					}
 				},
 				{
-					"filename": "Damage/Damage/Face/frame0002.png",
+					"filename": "Damage/Dos/frame0002.png",
 					"region": {
 						"x": 601,
 						"y": 1,
@@ -203,7 +203,7 @@
 					}
 				},
 				{
-					"filename": "Damage/Damage/Haut/frame0002.png",
+					"filename": "Damage/de face/frame0002.png",
 					"region": {
 						"x": 651,
 						"y": 1,
@@ -218,7 +218,7 @@
 					}
 				},
 				{
-					"filename": "Damage/Damage/droite/frame0002.png",
+					"filename": "Damage/droite/frame0002.png",
 					"region": {
 						"x": 701,
 						"y": 1,
@@ -233,7 +233,7 @@
 					}
 				},
 				{
-					"filename": "Damage/Damage/gauche/frame0002.png",
+					"filename": "Damage/gauche/frame0002.png",
 					"region": {
 						"x": 751,
 						"y": 1,
@@ -323,7 +323,7 @@
 					}
 				},
 				{
-					"filename": "ramasse/frame0000.png",
+					"filename": "Marche/Droite/frame0001.png",
 					"region": {
 						"x": 1001,
 						"y": 1,
@@ -353,21 +353,6 @@
 					}
 				},
 				{
-					"filename": "Marche/Droite/frame0001.png",
-					"region": {
-						"x": 1051,
-						"y": 1,
-						"w": 48,
-						"h": 48
-					},
-					"margin": {
-						"x": 0,
-						"y": 0,
-						"w": 0,
-						"h": 0
-					}
-				},
-				{
 					"filename": "Idle/Gauche/frame0000.png",
 					"region": {
 						"x": 1101,
@@ -383,9 +368,9 @@
 					}
 				},
 				{
-					"filename": "Idle/Gauche/frame0001.png",
+					"filename": "Marche/Gauche/frame0001.png",
 					"region": {
-						"x": 1151,
+						"x": 1101,
 						"y": 1,
 						"w": 48,
 						"h": 48
@@ -398,7 +383,7 @@
 					}
 				},
 				{
-					"filename": "Marche/Gauche/frame0001.png",
+					"filename": "Idle/Gauche/frame0001.png",
 					"region": {
 						"x": 1151,
 						"y": 1,
@@ -533,7 +518,7 @@
 					}
 				},
 				{
-					"filename": "ramasse/frame0001.png",
+					"filename": "Mort/frame0000.png",
 					"region": {
 						"x": 1601,
 						"y": 1,
@@ -548,9 +533,39 @@
 					}
 				},
 				{
-					"filename": "ramasse/frame0002.png",
+					"filename": "Mort/frame0001.png",
 					"region": {
 						"x": 1651,
+						"y": 1,
+						"w": 48,
+						"h": 48
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Mort/frame0002.png",
+					"region": {
+						"x": 1701,
+						"y": 1,
+						"w": 48,
+						"h": 48
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Mort/frame0003.png",
+					"region": {
+						"x": 1751,
 						"y": 1,
 						"w": 48,
 						"h": 48
@@ -568,6 +583,6 @@
 	"meta": {
 		"app": "https://www.codeandweb.com/texturepacker",
 		"version": "1.0",
-		"smartupdate": "$TexturePacker:SmartUpdate:8c12ee54894a208d4dc09c815bee54d4:6ec1e26e93213661e353548ee5bebbdf:689777f6542b2c148fe60f541cc9209e$"
+		"smartupdate": "$TexturePacker:SmartUpdate:83643afd21efab60fc419e9741c66aac:248b62b22f0593281a7f6772982f21f7:a2088bc4633d0ed4823491ce3d08a47b$"
 	}
 }
