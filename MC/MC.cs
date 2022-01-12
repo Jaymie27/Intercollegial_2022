@@ -15,6 +15,7 @@ public class MC : KinematicBody2D
 	AnimationTree animationTree;
 	AnimationNodeStateMachinePlayback animationState;
 
+  	bool inverted = false;
 
 
 	public static float DirectionX;
@@ -84,12 +85,25 @@ public class MC : KinematicBody2D
 			
 			if(Input.IsActionJustReleased("ui_attack"))
 			{
-				state = State.ATTACK;
-			
+				if(inverted)
+				{
+					state = State.PICKUP;
+				}
+				else
+				{
+					state = State.ATTACK;
+				}			
 			}
 			else if(Input.IsActionJustReleased("pup"))
 			{
-				state = State.PICKUP;
+				if(inverted)
+				{
+					state = State.ATTACK;
+				}
+				else
+				{
+					state = State.PICKUP;
+				}
 			}
 			else
 			{
