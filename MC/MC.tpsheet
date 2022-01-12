@@ -1,0 +1,468 @@
+{
+	"textures": [
+		{
+			"image": "MC.png",
+			"size": {
+				"w": 1500,
+				"h": 50
+			},
+			"sprites": [
+				{
+					"filename": "Attaque/Bas/frame0000.png",
+					"region": {
+						"x": 1,
+						"y": 1,
+						"w": 48,
+						"h": 48
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Attaque/Bas/frame0001.png",
+					"region": {
+						"x": 51,
+						"y": 1,
+						"w": 48,
+						"h": 48
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Attaque/Bas/frame0002.png",
+					"region": {
+						"x": 101,
+						"y": 1,
+						"w": 48,
+						"h": 48
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Attaque/Droite/frame0000.png",
+					"region": {
+						"x": 151,
+						"y": 1,
+						"w": 48,
+						"h": 48
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Attaque/Droite/frame0001.png",
+					"region": {
+						"x": 201,
+						"y": 1,
+						"w": 48,
+						"h": 48
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Attaque/Droite/frame0002.png",
+					"region": {
+						"x": 251,
+						"y": 1,
+						"w": 48,
+						"h": 48
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Attaque/Gauche/frame0000.png",
+					"region": {
+						"x": 301,
+						"y": 1,
+						"w": 48,
+						"h": 48
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Attaque/Gauche/frame0001.png",
+					"region": {
+						"x": 351,
+						"y": 1,
+						"w": 48,
+						"h": 48
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Attaque/Gauche/frame0002.png",
+					"region": {
+						"x": 401,
+						"y": 1,
+						"w": 48,
+						"h": 48
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Attaque/Haut/frame0000.png",
+					"region": {
+						"x": 451,
+						"y": 1,
+						"w": 48,
+						"h": 48
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Attaque/Haut/frame0001.png",
+					"region": {
+						"x": 501,
+						"y": 1,
+						"w": 48,
+						"h": 48
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Attaque/Haut/frame0002.png",
+					"region": {
+						"x": 551,
+						"y": 1,
+						"w": 48,
+						"h": 48
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Idle/Avant/frame0000.png",
+					"region": {
+						"x": 601,
+						"y": 1,
+						"w": 48,
+						"h": 48
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Idle/Avant/frame0001.png",
+					"region": {
+						"x": 651,
+						"y": 1,
+						"w": 48,
+						"h": 48
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Idle/De dos/frame0000.png",
+					"region": {
+						"x": 701,
+						"y": 1,
+						"w": 48,
+						"h": 48
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Idle/De dos/frame0001.png",
+					"region": {
+						"x": 751,
+						"y": 1,
+						"w": 48,
+						"h": 48
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Idle/Droite/frame0000.png",
+					"region": {
+						"x": 801,
+						"y": 1,
+						"w": 48,
+						"h": 48
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Idle/Droite/frame0001.png",
+					"region": {
+						"x": 851,
+						"y": 1,
+						"w": 48,
+						"h": 48
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Idle/Gauche/frame0000.png",
+					"region": {
+						"x": 901,
+						"y": 1,
+						"w": 48,
+						"h": 48
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Idle/Gauche/frame0001.png",
+					"region": {
+						"x": 951,
+						"y": 1,
+						"w": 48,
+						"h": 48
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Marche/Bas/frame0000.png",
+					"region": {
+						"x": 1001,
+						"y": 1,
+						"w": 48,
+						"h": 48
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Marche/Bas/frame0001.png",
+					"region": {
+						"x": 1051,
+						"y": 1,
+						"w": 48,
+						"h": 48
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Marche/Droite/frame0000.png",
+					"region": {
+						"x": 1101,
+						"y": 1,
+						"w": 48,
+						"h": 48
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Marche/Droite/frame0001.png",
+					"region": {
+						"x": 1151,
+						"y": 1,
+						"w": 48,
+						"h": 48
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Marche/Droite/frame0002.png",
+					"region": {
+						"x": 1201,
+						"y": 1,
+						"w": 48,
+						"h": 48
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Marche/Gauche/frame0000.png",
+					"region": {
+						"x": 1251,
+						"y": 1,
+						"w": 48,
+						"h": 48
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Marche/Gauche/frame0001.png",
+					"region": {
+						"x": 1301,
+						"y": 1,
+						"w": 48,
+						"h": 48
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Marche/Gauche/frame0002.png",
+					"region": {
+						"x": 1351,
+						"y": 1,
+						"w": 48,
+						"h": 48
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Marche/Haut/frame0000.png",
+					"region": {
+						"x": 1401,
+						"y": 1,
+						"w": 48,
+						"h": 48
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Marche/Haut/frame0001.png",
+					"region": {
+						"x": 1451,
+						"y": 1,
+						"w": 48,
+						"h": 48
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				}
+			]
+		}
+	],
+	"meta": {
+		"app": "https://www.codeandweb.com/texturepacker",
+		"version": "1.0",
+		"smartupdate": "$TexturePacker:SmartUpdate:48c48d327c0b869699f0eac8671737ed:2158eaeddadbc561c867e8f397644048:689777f6542b2c148fe60f541cc9209e$"
+	}
+}
