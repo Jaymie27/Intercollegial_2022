@@ -18,6 +18,8 @@ public class MC : KinematicBody2D
   	bool inverted = false;
 	
 	bool released = true;
+	
+	bool[] timer = new bool[300];
 
 	public static Vector2 pos;
 
@@ -50,11 +52,16 @@ public class MC : KinematicBody2D
 		input_vector.x = Input.GetActionStrength("ui_right") - Input.GetActionStrength("ui_left");
 		input_vector.y = Input.GetActionStrength("ui_down") - Input.GetActionStrength("ui_up");
 		input_vector = input_vector.Normalized();
+		if(inverted == true)
+		{
+			return -input_vector;
+		}
 		return input_vector;
 	}
 
   	public override void _PhysicsProcess(float delta)
   	{	
+		tick();
 		pos = this.GlobalPosition;	  
 		switch(state){
 			case State.MOVE:
@@ -73,8 +80,6 @@ public class MC : KinematicBody2D
 	private void move_state(float delta)
 	{		
 		 var input_vector = GetInput();
-		
-		
 		
 			if(Input.IsActionPressed("ui_attack"))
 			{
@@ -148,7 +153,41 @@ public class MC : KinematicBody2D
 		state = State.MOVE;
 	}
 	
+	private void _on_Bandits_attack()
+	{
+		start_timer();
+	}
+	
+	private void start_timer()
+	{
+		for(int i = 0; i < 300; i++)
+		{
+			timer[i] = true;
+		}
+	}
+	
+	private void tick()
+	{
+		for(int i = 0; i < 300; i++)
+		{
+			if(timer[i] == true)
+			{
+				GD.Print(i);
+				timer[i] = false;
+				inverted = true;
+				return;
+			}
+		}
+		inverted = false;
+	}
+	
+	
 }
+
+
+
+
+
 
 
 

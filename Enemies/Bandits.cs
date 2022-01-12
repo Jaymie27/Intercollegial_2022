@@ -185,8 +185,12 @@ public class Bandits : KinematicBody2D
 	
 	private void attack_finished()
 	{
-		
+		EmitSignal("attack");
+		GD.Print("hey criss");
 	}
+	
+	[Signal]
+	public delegate void attack();
 }
 
 
