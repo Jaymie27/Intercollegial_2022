@@ -23,7 +23,8 @@ public class MC : KinematicBody2D
 	private enum State{
 		MOVE,
 		ATTACK,
-		DEAD
+		DEAD,
+		PICKUP
 	};
 
 	State state;
@@ -56,6 +57,9 @@ public class MC : KinematicBody2D
 			case State.ATTACK:
 				attack_state(delta);
 				break;
+			case State.PICKUP:
+				pickup_state(delta);
+				break;
 		}	 
   	}
 	
@@ -83,6 +87,10 @@ public class MC : KinematicBody2D
 				state = State.ATTACK;
 			
 			}
+			else if(Input.IsActionJustReleased("pup"))
+			{
+				state = State.PICKUP;
+			}
 			else
 			{
 				animationState.Travel("Idle");
@@ -99,6 +107,12 @@ public class MC : KinematicBody2D
 	{
 		Velocity = Vector2.Zero;
 		animationState.Travel("Attack");
+	}
+	
+	private void pickup_state(float delta)
+	{
+		Velocity = Vector2.Zero;
+		animationState.Travel("Pick Up");
 	}
 	
 	public void attack_animation_finished()
