@@ -1,4 +1,4 @@
-[gd_scene load_steps=58 format=2]
+[gd_scene load_steps=60 format=2]
 
 [ext_resource path="res://Hitbox&Hurtbox/Hitbox.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Hitbox&Hurtbox/Hurtbox.tscn" type="PackedScene" id=2]
@@ -9,6 +9,7 @@
 [sub_resource type="Animation" id=1]
 resource_name = "Attack Down"
 length = 0.3
+loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
@@ -25,6 +26,7 @@ tracks/0/keys = {
 [sub_resource type="Animation" id=2]
 resource_name = "Attack Left"
 length = 0.3
+loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
@@ -41,6 +43,7 @@ tracks/0/keys = {
 [sub_resource type="Animation" id=3]
 resource_name = "Attack Right"
 length = 0.3
+loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
@@ -57,6 +60,7 @@ tracks/0/keys = {
 [sub_resource type="Animation" id=4]
 resource_name = "Attack Up"
 length = 0.3
+loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
@@ -441,11 +445,19 @@ start_node = "Idle"
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=51]
 
+[sub_resource type="CapsuleShape2D" id=53]
+radius = 11.1651
+height = 30.921
+
 [sub_resource type="CircleShape2D" id=52]
-radius = 182.176
+radius = 244.243
+
+[sub_resource type="CapsuleShape2D" id=54]
+radius = 19.6136
 
 [node name="Bandits" type="KinematicBody2D"]
 collision_layer = 8
+collision_mask = 2
 script = ExtResource( 4 )
 
 [node name="Sprite" type="Sprite" parent="."]
@@ -484,6 +496,7 @@ parameters/Idle/blend_position = Vector2( 0, 0 )
 parameters/Run/blend_position = Vector2( 0, 0 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 53 )
 
 [node name="HitboxPivot" type="Position2D" parent="."]
 
@@ -502,11 +515,20 @@ collision_mask = 0
 [node name="test" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="test"]
+position = Vector2( 0.529732, 0 )
 shape = SubResource( 52 )
 
+[node name="attackzone" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="attackzone"]
+shape = SubResource( 54 )
 [connection signal="area_entered" from="test" to="." method="_on_test_area_entered"]
 [connection signal="area_exited" from="test" to="." method="_on_test_area_exited"]
+[connection signal="area_entered" from="attackzone" to="." method="_on_attackzone_area_entered"]
+[connection signal="area_exited" from="attackzone" to="." method="_on_attackzone_area_exited"]
 
 [editable path="HitboxPivot/Hitbox"]
+
 [editable path="Hurtbox"]
+
 [editable path="WanderController"]

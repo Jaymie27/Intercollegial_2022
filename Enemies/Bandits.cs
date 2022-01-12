@@ -7,11 +7,12 @@ public class Bandits : KinematicBody2D
 	private enum state{
 		IDLE,
 		WANDER,
-		CHASE
+		CHASE,
+		ATTACK
 	};
 	
 	private int ACCELERATION = 300;
-	private int MAX_SPEED = 50;
+	private int MAX_SPEED = 80;
 	private int FRICTION = 200;
 
 	private int wander_target_range = 4;
@@ -97,6 +98,11 @@ public class Bandits : KinematicBody2D
 			//Velocity = Velocity.MoveToward(Direction * MAX_SPEED, ACCELERATION);		
 		
 		break;
+		
+		case state.ATTACK:
+			animationState.Travel("Attack");
+			accelerate_towards_point(MC.pos, delta);
+		break;
 	}
 	
 	Velocity = MoveAndSlide(Velocity);
@@ -162,7 +168,32 @@ public class Bandits : KinematicBody2D
 			currentState = pick_random_state(states);
 		}
 	}
+	private void _on_attackzone_area_entered(Area2D area)
+	{
+		if(area.IsInGroup("player"))
+		{
+			currentState = state.ATTACK;
+		}
+	}
+	private void _on_attackzone_area_exited(Area2D area)
+	{
+		if(area.IsInGroup("player"))
+		{
+			currentState = state.CHASE;
+		}
+	}
+	
+	private void attack_finished()
+	{
+		
+	}
 }
+
+
+
+
+
+
 
 
 

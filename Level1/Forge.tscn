@@ -151,6 +151,9 @@ shape = SubResource( 1 )
 position = Vector2( 883.941, 199.469 )
 scale = Vector2( 3, 3 )
 
+[node name="Sprite" parent="ViewportContainer/Viewport/MC" index="0"]
+frame = 20
+
 [node name="AnimationTree" parent="ViewportContainer/Viewport/MC" index="2"]
 parameters/playback = SubResource( 2 )
 
