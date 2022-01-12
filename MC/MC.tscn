@@ -665,16 +665,16 @@ graph_offset = Vector2( -158.72, 32.3665 )
 radius = 5.55732
 height = 5.41926
 
-[sub_resource type="CapsuleShape2D" id=55]
+[sub_resource type="CapsuleShape2D" id=54]
 radius = 18.6707
 height = 32.8883
 
-[sub_resource type="CapsuleShape2D" id=56]
+[sub_resource type="CapsuleShape2D" id=55]
 radius = 10.3381
 height = 24.6862
 
-[sub_resource type="CapsuleShape2D" id=54]
-radius = 18.4737
+[sub_resource type="CapsuleShape2D" id=56]
+radius = 20.3415
 height = 29.9351
 
 [node name="MC" type="KinematicBody2D"]
@@ -684,7 +684,7 @@ script = ExtResource( 5 )
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 4 )
 hframes = 34
-frame = 2
+frame = 20
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 "anims/Attack Down" = SubResource( 1 )
@@ -708,6 +708,7 @@ frame = 2
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource( 51 )
 anim_player = NodePath("../AnimationPlayer")
+active = true
 parameters/playback = SubResource( 52 )
 parameters/Attack/blend_position = Vector2( 0, 0 )
 parameters/Hurt/blend_position = Vector2( 0, 0 )
@@ -741,7 +742,7 @@ collision_mask = 8
 
 [node name="CollisionShape2D" parent="HitboxPivot/Hitbox" index="0"]
 position = Vector2( 20.5293, 0.943878 )
-shape = SubResource( 55 )
+shape = SubResource( 54 )
 disabled = true
 
 [node name="Hurtbox" parent="." instance=ExtResource( 3 )]
@@ -749,7 +750,7 @@ collision_layer = 4
 collision_mask = 0
 
 [node name="CollisionShape2D" parent="Hurtbox" index="0"]
-shape = SubResource( 56 )
+shape = SubResource( 55 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 
@@ -759,7 +760,8 @@ shape = SubResource( 56 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ennemyDetector"]
 position = Vector2( -0.0142946, 0.264866 )
-shape = SubResource( 54 )
+shape = SubResource( 56 )
 
 [editable path="HitboxPivot/Hitbox"]
+
 [editable path="Hurtbox"]

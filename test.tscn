@@ -10,5 +10,4 @@ position = Vector2( 198.274, -10.3787 )
 
 [node name="Bandits" parent="." instance=ExtResource( 2 )]
 position = Vector2( -81.4281, -6.59898 )
-
 [connection signal="attack" from="Bandits" to="MC" method="_on_Bandits_attack"]
