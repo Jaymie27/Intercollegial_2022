@@ -22,7 +22,6 @@ public class Bandits : KinematicBody2D
 	
 	public Vector2 Velocity;
 	public Vector2 Direction;
-	Area2D playerDetectionZone;
 	KinematicBody2D player;
 	Sprite aSprite;
 	AnimationPlayer animationPlayer;
@@ -36,7 +35,6 @@ public class Bandits : KinematicBody2D
 	{
 		Velocity = Vector2.Zero;
 		currentState = pick_random_state(states);
-		playerDetectionZone = GetNode<Area2D>("PlayerDetectionZone");
 		aSprite = GetNode<Sprite>("Sprite");
 		wanderController = GetNode<WanderController>("WanderController");
 		animationPlayer = GetNode<AnimationPlayer>("AnimationPlayer");
@@ -92,17 +90,12 @@ public class Bandits : KinematicBody2D
 	  case state.CHASE:
 		GD.Print("Chase");
 		animationState.Travel("Run");
-		player = (GetNode("PlayerDetectionZone") as PlayerDetectionZone).player;
-		if(player != null)
-		{
-			accelerate_towards_point(MC.pos, delta);
+		//player = (GetNode("PlayerDetectionZone") as PlayerDetectionZone).player;
+		
+		accelerate_towards_point(MC.pos, delta);
 			//Direction = (MC.pos - this.GlobalPosition).Normalized();	
 			//Velocity = Velocity.MoveToward(Direction * MAX_SPEED, ACCELERATION);		
-		}
-		else
-		{
-			currentState = state.IDLE;
-		}
+		
 		break;
 	}
 	
@@ -125,8 +118,9 @@ public class Bandits : KinematicBody2D
 	}
 	private void seek_player()
 	{
-		if((GetNode("PlayerDetectionZone") as PlayerDetectionZone).can_see_player())
+		if(PlayerDetectionZone.inside == true)
 		{
+			GD.Print("goInside");
 			currentState = state.CHASE;
 		}
 	}
@@ -154,4 +148,24 @@ public class Bandits : KinematicBody2D
 		list[i] = list[j];
 		list[j] = temp;
 	}
+	private void _on_test_area_entered(Area2D area)
+	{
+		if(area.IsInGroup("player"))
+		{
+			currentState = state.CHASE;
+		}
+	}
+	private void _on_test_area_exited(Area2D area)
+	{
+		if(area.IsInGroup("player"))
+		{
+			currentState = pick_random_state(states);
+		}
+	}
 }
+
+
+
+
+
+

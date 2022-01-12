@@ -1,10 +1,9 @@
-[gd_scene load_steps=59 format=2]
+[gd_scene load_steps=58 format=2]
 
 [ext_resource path="res://Hitbox&Hurtbox/Hitbox.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Hitbox&Hurtbox/Hurtbox.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Enemies/Enemies.png" type="Texture" id=3]
 [ext_resource path="res://Enemies/Bandits.cs" type="Script" id=4]
-[ext_resource path="res://Enemies/PlayerDetectionZone/PlayerDetectionZone.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Enemies/WanderController/WanderController.tscn" type="PackedScene" id=6]
 
 [sub_resource type="Animation" id=1]
@@ -442,8 +441,8 @@ start_node = "Idle"
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=51]
 
-[sub_resource type="CircleShape2D" id=52]
-radius = 206.595
+[sub_resource type="CircleShape2D" id=53]
+radius = 182.176
 
 [node name="Bandits" type="KinematicBody2D"]
 collision_layer = 8
@@ -496,21 +495,19 @@ collision_mask = 4
 collision_layer = 16
 collision_mask = 0
 
-[node name="PlayerDetectionZone" parent="." instance=ExtResource( 5 )]
-collision_layer = 0
-collision_mask = 2
-
-[node name="CollisionShape2D" parent="PlayerDetectionZone" index="0"]
-shape = SubResource( 52 )
-
 [node name="WanderController" parent="." instance=ExtResource( 6 )]
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 
+[node name="test" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="test"]
+shape = SubResource( 53 )
+[connection signal="area_entered" from="test" to="." method="_on_test_area_entered"]
+[connection signal="area_exited" from="test" to="." method="_on_test_area_exited"]
+
 [editable path="HitboxPivot/Hitbox"]
 
 [editable path="Hurtbox"]
-
-[editable path="PlayerDetectionZone"]
 
 [editable path="WanderController"]
