@@ -70,6 +70,8 @@ position = Vector2( 367.65, 366.736 )
 flip_h = true
 
 [node name="Label" parent="Rock6" index="3"]
+text = ""
+align = 1
 percent_visible = 1.0
 
 [node name="Rock7" parent="." instance=ExtResource( 3 )]
@@ -225,9 +227,6 @@ position = Vector2( 149.118, 109.373 )
 [node name="MC" parent="." instance=ExtResource( 2 )]
 position = Vector2( 44.7867, 529.678 )
 
-[node name="Sprite" parent="MC" index="0"]
-frame = 21
-
 [node name="AnimationTree" parent="MC" index="2"]
 parameters/playback = SubResource( 2 )
 
@@ -238,31 +237,17 @@ limit_right = 1750
 limit_bottom = 640
 
 [editable path="Rock2"]
-
 [editable path="Rock6"]
-
 [editable path="Rock8"]
-
 [editable path="Rock9"]
-
 [editable path="Rock11"]
-
 [editable path="Rock15"]
-
 [editable path="Rock18"]
-
 [editable path="Rock19"]
-
 [editable path="Rock22"]
-
 [editable path="Rock25"]
-
 [editable path="Rock28"]
-
 [editable path="Rock33"]
-
 [editable path="MC"]
-
 [editable path="MC/HitboxPivot/Hitbox"]
-
 [editable path="MC/Hurtbox"]

@@ -22,6 +22,8 @@ public class MC : KinematicBody2D
 	bool[] timer = new bool[300];
 
 	public static Vector2 pos;
+	
+	public static string language = "en";
 
 	public static float DirectionX;
 	public static float DirectionY;

@@ -10,6 +10,14 @@ public class Rock : StaticBody2D
 	public override void _Ready()
 	{
 		information = GetNode<Label>("Label");
+			if(MC.language == "fr")
+			{
+				information.Text = "Appuyez sur R";
+			}
+			else
+			{
+				information.Text = "Press R";
+			}
 	}
 
 	private void _on_Area2D_area_entered(Area2D area)
@@ -25,6 +33,7 @@ public class Rock : StaticBody2D
 	{
 		if(area.IsInGroup("player"))
 		{
+			
 			information.Visible = false;
 			canTake = false;
 		}
