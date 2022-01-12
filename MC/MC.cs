@@ -183,13 +183,10 @@ public class MC : KinematicBody2D
 		inverted = false;
 	}
 	
-	
+	private void _on_Mushroom1_poison()
+	{
+		start_timer();
+	}
 }
-
-
-
-
-
-
 
 

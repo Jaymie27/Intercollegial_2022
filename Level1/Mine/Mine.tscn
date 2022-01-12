@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Level1/Mine/mine.tres" type="TileSet" id=1]
 [ext_resource path="res://MC/MC.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Level1/Mine/Rock.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Level1/Mine/Mushroom.tscn" type="PackedScene" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 5.39581, 322.081 )
@@ -235,6 +236,117 @@ limit_left = 0
 limit_top = 0
 limit_right = 1750
 limit_bottom = 640
+
+[node name="Mushroom1" parent="." instance=ExtResource( 4 )]
+position = Vector2( 704.921, 310.242 )
+scale = Vector2( 1.2, 1.2 )
+
+[node name="Mushroom2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 516.537, 286.214 )
+scale = Vector2( 1.2, 1.2 )
+
+[node name="Mushroom3" parent="." instance=ExtResource( 4 )]
+position = Vector2( 357.466, 218.811 )
+scale = Vector2( 1.2, 1.2 )
+
+[node name="Mushroom4" parent="." instance=ExtResource( 4 )]
+position = Vector2( 610.901, 144.668 )
+scale = Vector2( 1.2, 1.2 )
+
+[node name="Mushroom5" parent="." instance=ExtResource( 4 )]
+position = Vector2( 252.317, 379.231 )
+scale = Vector2( 1.2, 1.2 )
+
+[node name="Mushroom6" parent="." instance=ExtResource( 4 )]
+position = Vector2( 792.89, 450.678 )
+scale = Vector2( 1.2, 1.2 )
+
+[node name="Mushroom7" parent="." instance=ExtResource( 4 )]
+position = Vector2( 488.228, 524.822 )
+scale = Vector2( 1.2, 1.2 )
+
+[node name="Mushroom8" parent="." instance=ExtResource( 4 )]
+position = Vector2( 189.422, 151.873 )
+scale = Vector2( 1.2, 1.2 )
+
+[node name="Mushroom9" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1365.82, 296.999 )
+scale = Vector2( 1.2, 1.2 )
+
+[node name="Mushroom10" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1280.89, 530.214 )
+scale = Vector2( 1.2, 1.2 )
+
+[node name="Mushroom11" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1232.36, 287.562 )
+scale = Vector2( 1.2, 1.2 )
+
+[node name="Mushroom12" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1164.96, 110.966 )
+scale = Vector2( 1.2, 1.2 )
+
+[node name="Mushroom13" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1073.29, 500.556 )
+scale = Vector2( 1.2, 1.2 )
+
+[node name="Mushroom14" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1036.89, 310.48 )
+scale = Vector2( 1.2, 1.2 )
+
+[node name="Mushroom15" parent="." instance=ExtResource( 4 )]
+position = Vector2( 970.834, 112.314 )
+scale = Vector2( 1.2, 1.2 )
+
+[node name="Mushroom16" parent="." instance=ExtResource( 4 )]
+position = Vector2( 876.47, 532.91 )
+scale = Vector2( 1.2, 1.2 )
+
+[node name="Mushroom17" parent="." instance=ExtResource( 4 )]
+position = Vector2( 930.393, 376.535 )
+scale = Vector2( 1.2, 1.2 )
+
+[node name="Mushroom18" parent="." instance=ExtResource( 4 )]
+position = Vector2( 852.205, 229.596 )
+scale = Vector2( 1.2, 1.2 )
+
+[node name="Mushroom19" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1592.29, 469.551 )
+scale = Vector2( 1.2, 1.2 )
+
+[node name="Mushroom20" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1547.81, 286.214 )
+scale = Vector2( 1.2, 1.2 )
+
+[node name="Mushroom21" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1615.21, 125.795 )
+scale = Vector2( 1.2, 1.2 )
+
+[node name="Mushroom22" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1450.74, 487.076 )
+scale = Vector2( 1.2, 1.2 )
+
+[connection signal="poison" from="Mushroom1" to="MC" method="_on_Mushroom1_poison"]
+[connection signal="poison" from="Mushroom2" to="MC" method="_on_Mushroom1_poison"]
+[connection signal="poison" from="Mushroom3" to="MC" method="_on_Mushroom1_poison"]
+[connection signal="poison" from="Mushroom4" to="MC" method="_on_Mushroom1_poison"]
+[connection signal="poison" from="Mushroom5" to="MC" method="_on_Mushroom1_poison"]
+[connection signal="poison" from="Mushroom6" to="MC" method="_on_Mushroom1_poison"]
+[connection signal="poison" from="Mushroom7" to="MC" method="_on_Mushroom1_poison"]
+[connection signal="poison" from="Mushroom8" to="MC" method="_on_Mushroom1_poison"]
+[connection signal="poison" from="Mushroom9" to="MC" method="_on_Mushroom1_poison"]
+[connection signal="poison" from="Mushroom10" to="MC" method="_on_Mushroom1_poison"]
+[connection signal="poison" from="Mushroom11" to="MC" method="_on_Mushroom1_poison"]
+[connection signal="poison" from="Mushroom12" to="MC" method="_on_Mushroom1_poison"]
+[connection signal="poison" from="Mushroom13" to="MC" method="_on_Mushroom1_poison"]
+[connection signal="poison" from="Mushroom14" to="MC" method="_on_Mushroom1_poison"]
+[connection signal="poison" from="Mushroom15" to="MC" method="_on_Mushroom1_poison"]
+[connection signal="poison" from="Mushroom16" to="MC" method="_on_Mushroom1_poison"]
+[connection signal="poison" from="Mushroom17" to="MC" method="_on_Mushroom1_poison"]
+[connection signal="poison" from="Mushroom18" to="MC" method="_on_Mushroom1_poison"]
+[connection signal="poison" from="Mushroom19" to="MC" method="_on_Mushroom1_poison"]
+[connection signal="poison" from="Mushroom20" to="MC" method="_on_Mushroom1_poison"]
+[connection signal="poison" from="Mushroom21" to="MC" method="_on_Mushroom1_poison"]
+[connection signal="poison" from="Mushroom22" to="MC" method="_on_Mushroom1_poison"]
 
 [editable path="Rock2"]
 [editable path="Rock6"]
