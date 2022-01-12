@@ -7,3 +7,12 @@ C:\Users\olivi\Desktop\cegep\intercollegial\Intercollegial_2022\.mono\temp\bin\D
 C:\Users\olivi\Desktop\cegep\intercollegial\Intercollegial_2022\.mono\temp\bin\Debug\Intercollegial_2022.pdb
 C:\Users\olivi\Desktop\cegep\intercollegial\Intercollegial_2022\.mono\temp\obj\Debug\Intercollegial_2022.dll
 C:\Users\olivi\Desktop\cegep\intercollegial\Intercollegial_2022\.mono\temp\obj\Debug\Intercollegial_2022.pdb
+C:\Users\j_des\OneDrive\Documents\Intercollegial_2022\.mono\temp\bin\Debug\Intercollegial_2022.dll
+C:\Users\j_des\OneDrive\Documents\Intercollegial_2022\.mono\temp\bin\Debug\Intercollegial_2022.pdb
+C:\Users\j_des\OneDrive\Documents\Intercollegial_2022\.mono\temp\obj\Debug\Intercollegial_2022.csproj.AssemblyReference.cache
+C:\Users\j_des\OneDrive\Documents\Intercollegial_2022\.mono\temp\obj\Debug\Intercollegial_2022.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\j_des\OneDrive\Documents\Intercollegial_2022\.mono\temp\obj\Debug\Intercollegial_2022.AssemblyInfoInputs.cache
+C:\Users\j_des\OneDrive\Documents\Intercollegial_2022\.mono\temp\obj\Debug\Intercollegial_2022.AssemblyInfo.cs
+C:\Users\j_des\OneDrive\Documents\Intercollegial_2022\.mono\temp\obj\Debug\Intercollegial_2022.csproj.CoreCompileInputs.cache
+C:\Users\j_des\OneDrive\Documents\Intercollegial_2022\.mono\temp\obj\Debug\Intercollegial_2022.dll
+C:\Users\j_des\OneDrive\Documents\Intercollegial_2022\.mono\temp\obj\Debug\Intercollegial_2022.pdb

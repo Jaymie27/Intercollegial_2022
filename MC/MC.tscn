@@ -559,6 +559,7 @@ parameters/Run/blend_position = Vector2( 0, 0 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 
 [node name="Camera2D" type="Camera2D" parent="."]
+current = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Camera2D"]
 
@@ -581,5 +582,4 @@ collision_mask = 0
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 
 [editable path="HitboxPivot/Hitbox"]
-
 [editable path="Hurtbox"]
