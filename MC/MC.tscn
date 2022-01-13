@@ -287,6 +287,20 @@ tracks/0/keys = {
 "update": 1,
 "values": [ 12 ]
 }
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.1 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "attack_animation_finished"
+} ]
+}
 
 [sub_resource type="Animation" id=6]
 resource_name = "Hurt Left"
@@ -302,6 +316,20 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ 15 ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.1 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "attack_animation_finished"
+} ]
 }
 
 [sub_resource type="Animation" id=7]
@@ -319,6 +347,20 @@ tracks/0/keys = {
 "update": 1,
 "values": [ 14 ]
 }
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.1 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "attack_animation_finished"
+} ]
+}
 
 [sub_resource type="Animation" id=8]
 resource_name = "Hurt Up"
@@ -334,6 +376,20 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ 13 ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.1 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "attack_animation_finished"
+} ]
 }
 
 [sub_resource type="Animation" id=9]
@@ -659,7 +715,7 @@ states/Run/node = SubResource( 42 )
 states/Run/position = Vector2( 657, 133 )
 transitions = [ "Idle", "Attack", SubResource( 43 ), "Attack", "Idle", SubResource( 44 ), "Idle", "Run", SubResource( 45 ), "Run", "Idle", SubResource( 46 ), "Idle", "Pick Up", SubResource( 47 ), "Pick Up", "Idle", SubResource( 48 ), "Idle", "Hurt", SubResource( 49 ), "Hurt", "Idle", SubResource( 50 ) ]
 start_node = "Idle"
-graph_offset = Vector2( -158.72, 32.3665 )
+graph_offset = Vector2( -158.72, 35.4265 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=52]
 
@@ -686,7 +742,7 @@ script = ExtResource( 5 )
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 4 )
 hframes = 34
-frame = 21
+frame = 20
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 "anims/Attack Down" = SubResource( 1 )
@@ -824,15 +880,17 @@ __meta__ = {
 }
 
 [node name="HitboxPivot" type="Position2D" parent="."]
-position = Vector2( 10, 0 )
+position = Vector2( 0, 20 )
+rotation = 1.5708
 
 [node name="Hitbox" parent="HitboxPivot" instance=ExtResource( 2 )]
 collision_layer = 0
-collision_mask = 11
+collision_mask = 27
 
 [node name="CollisionShape2D" parent="HitboxPivot/Hitbox" index="0"]
 position = Vector2( 20.5293, 0.943878 )
 shape = SubResource( 54 )
+disabled = true
 
 [node name="Hurtbox" parent="." instance=ExtResource( 3 )]
 collision_layer = 4
@@ -850,6 +908,7 @@ shape = SubResource( 55 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ennemyDetector"]
 position = Vector2( -0.0142946, 0.264866 )
 shape = SubResource( 56 )
+[connection signal="area_entered" from="Hurtbox" to="." method="_on_Hurtbox_area_entered"]
 
 [editable path="HitboxPivot/Hitbox"]
 

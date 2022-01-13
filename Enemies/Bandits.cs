@@ -8,7 +8,9 @@ public class Bandits : KinematicBody2D
 		IDLE,
 		WANDER,
 		CHASE,
-		ATTACK
+		ATTACK,
+		HURT,
+		DEAD
 	};
 	
 	private int ACCELERATION = 300;
@@ -17,7 +19,7 @@ public class Bandits : KinematicBody2D
 
 	private int wander_target_range = 4;
 
-	
+	private int life = 3;
 	
 	private state currentState;
 	
@@ -103,6 +105,14 @@ public class Bandits : KinematicBody2D
 			animationState.Travel("Attack");
 			accelerate_towards_point(MC.pos, delta);
 		break;
+		
+		case state.HURT:
+			 animationState.Travel("Hurt");
+		break;
+		
+		case state.DEAD:
+			animationState.Travel("Death");
+		break;
 	}
 	
 	Velocity = MoveAndSlide(Velocity);
@@ -137,6 +147,19 @@ public class Bandits : KinematicBody2D
 		Random rand = new Random();
 		state_list = Shuffle<state> (state_list, rand);
 		return state_list[0];
+		
+	}
+	
+	private void MEURT()
+	{
+		if(life == 0)
+		{
+			QueueFree();
+		}
+		else
+		{
+			currentState = pick_random_state(states);
+		}
 	}
 
 	private List<T> Shuffle<T>(List<T> list, Random rnd)
@@ -189,9 +212,30 @@ public class Bandits : KinematicBody2D
 		GD.Print("hey criss");
 	}
 	
+	private void _on_Hurtbox_area_entered(Area2D area)
+	{
+		if(area.IsInGroup("sword"))
+		{
+		  life --;
+		  if(life == 0)
+		  {
+			 currentState = state.DEAD;
+		  }
+		  else
+		  {
+			 currentState = state.HURT;
+		  }
+		}
+	}
+	
+	
+	
 	[Signal]
 	public delegate void attack();
 }
+
+
+
 
 
 

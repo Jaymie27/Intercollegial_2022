@@ -289,6 +289,20 @@ tracks/0/keys = {
 "update": 1,
 "values": [ 32, 32, 33, 34 ]
 }
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.4 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "MEURT"
+} ]
+}
 
 [sub_resource type="Animation" id=6]
 resource_name = "Hurt Down"
@@ -304,6 +318,20 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ 13 ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.1 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "MEURT"
+} ]
 }
 
 [sub_resource type="Animation" id=7]
@@ -321,6 +349,20 @@ tracks/0/keys = {
 "update": 1,
 "values": [ 15 ]
 }
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.1 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "MEURT"
+} ]
+}
 
 [sub_resource type="Animation" id=8]
 resource_name = "Hurt Right"
@@ -337,6 +379,20 @@ tracks/0/keys = {
 "update": 1,
 "values": [ 14 ]
 }
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.1 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "MEURT"
+} ]
+}
 
 [sub_resource type="Animation" id=9]
 resource_name = "Hurt Up"
@@ -352,6 +408,20 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ 12 ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.1 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "MEURT"
+} ]
 }
 
 [sub_resource type="Animation" id=10]
@@ -649,10 +719,10 @@ start_node = "Idle"
 radius = 11.1651
 height = 30.921
 
-[sub_resource type="CapsuleShape2D" id=57]
+[sub_resource type="CapsuleShape2D" id=53]
 
 [sub_resource type="CapsuleShape2D" id=54]
-radius = 19.6136
+radius = 29.2354
 
 [sub_resource type="CircleShape2D" id=55]
 radius = 244.243
@@ -668,7 +738,7 @@ script = ExtResource( 4 )
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 3 )
 hframes = 36
-frame = 20
+frame = 21
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 "anims/Attack Down" = SubResource( 1 )
@@ -704,7 +774,8 @@ parameters/Run/blend_position = Vector2( 0, 0 )
 shape = SubResource( 52 )
 
 [node name="HitboxPivot" type="Position2D" parent="."]
-rotation = 3.14159
+position = Vector2( 0, 15 )
+rotation = 1.5708
 
 [node name="Hitbox" parent="HitboxPivot" instance=ExtResource( 1 )]
 collision_layer = 0
@@ -712,11 +783,11 @@ collision_mask = 4
 
 [node name="CollisionShape2D" parent="HitboxPivot/Hitbox" index="0"]
 position = Vector2( 17.5198, -0.166855 )
-shape = SubResource( 57 )
+shape = SubResource( 53 )
 
 [node name="Hurtbox" parent="." instance=ExtResource( 2 )]
 collision_layer = 16
-collision_mask = 0
+collision_mask = 2
 
 [node name="CollisionShape2D" parent="Hurtbox" index="0"]
 shape = SubResource( 54 )
@@ -735,12 +806,14 @@ shape = SubResource( 55 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="attackzone"]
 shape = SubResource( 56 )
-
+[connection signal="area_entered" from="Hurtbox" to="." method="_on_Hurtbox_area_entered"]
 [connection signal="area_entered" from="test" to="." method="_on_test_area_entered"]
 [connection signal="area_exited" from="test" to="." method="_on_test_area_exited"]
 [connection signal="area_entered" from="attackzone" to="." method="_on_attackzone_area_entered"]
 [connection signal="area_exited" from="attackzone" to="." method="_on_attackzone_area_exited"]
 
 [editable path="HitboxPivot/Hitbox"]
+
 [editable path="Hurtbox"]
+
 [editable path="WanderController"]

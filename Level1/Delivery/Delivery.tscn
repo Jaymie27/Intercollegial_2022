@@ -118,9 +118,6 @@ shape = SubResource( 2 )
 [node name="MC" parent="." instance=ExtResource( 3 )]
 position = Vector2( 45.5974, 410.502 )
 
-[node name="Sprite" parent="MC" index="0"]
-frame = 20
-
 [node name="AnimationTree" parent="MC" index="2"]
 parameters/playback = SubResource( 3 )
 

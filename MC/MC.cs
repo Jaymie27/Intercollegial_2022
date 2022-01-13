@@ -17,6 +17,8 @@ public class MC : KinematicBody2D
 
   	bool inverted = false;
 	
+	public static int life = 10;
+	
 	bool released = true;
 	
 	bool[] timer = new bool[300];
@@ -41,7 +43,7 @@ public class MC : KinematicBody2D
 	private enum State{
 		MOVE,
 		ATTACK,
-		DEAD,
+		HURT,
 		PICKUP
 	};
 
@@ -94,9 +96,11 @@ public class MC : KinematicBody2D
 			case State.PICKUP:
 				pickup_state(delta);
 				break;
+			case State.HURT:
+				animationState.Travel("Hurt");
+				break;
 		}	 
   	}
-	
 	
 	private void move_state(float delta)
 	{		
@@ -163,21 +167,23 @@ public class MC : KinematicBody2D
 		animationState.Travel("Attack");
 	}
 	
+	private void dead_state(float delta)
+	{
+		Velocity = Vector2.Zero;
+		QueueFree();
+	}
+	
 	private void pickup_state(float delta)
 	{
 		Velocity = Vector2.Zero;
 		animationState.Travel("Pick Up");
 	}
 	
+	
 	public void attack_animation_finished()
 	{
 		state = State.MOVE;
-	}
-	
-	private void _on_Bandits_attack()
-	{
-		start_timer();
-	}
+	}	
 	
 	private void start_timer()
 	{
@@ -206,6 +212,24 @@ public class MC : KinematicBody2D
 	{
 		start_timer();
 	}
+	private void _on_Hurtbox_area_entered(Area2D area)
+	{
+		if(area.IsInGroup("sword"))
+		{
+			if(life > 0)
+			{
+				life --;
+				state = State.HURT;
+			}
+			else
+			{
+				QueueFree();
+			}
+		}
+	}
 }
+
+
+
 
 
