@@ -4,7 +4,7 @@
 [ext_resource path="res://Level1/Forest/Forest.tres" type="TileSet" id=2]
 [ext_resource path="res://MC/MC.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Level1/Village/Village.cs" type="Script" id=4]
-[ext_resource path="res://Level1/Village/Sprites/sign.png" type="Texture" id=5]
+[ext_resource path="res://Level1/Village/Sprites/sign (1).png" type="Texture" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 120.567, 10 )
@@ -126,9 +126,6 @@ shape = SubResource( 5 )
 
 [node name="MC" parent="." instance=ExtResource( 3 )]
 position = Vector2( 144.307, 420.127 )
-
-[node name="Sprite" parent="MC" index="0"]
-frame = 21
 
 [node name="AnimationTree" parent="MC" index="2"]
 parameters/playback = SubResource( 4 )

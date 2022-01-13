@@ -59,6 +59,21 @@ public class MC : KinematicBody2D
 		score = GetNode<Label>("Camera2D/CanvasLayer/score");
 		ScoreWood = GetNode<Label>("Camera2D/CanvasLayer/scoreWood");
 		livraison = GetNode<Label>("Camera2D/CanvasLayer/bool");
+		
+		if(language == "fr")
+		{
+			GetNode<Label>("Camera2D/CanvasLayer/Label").Text = "Roches";
+			GetNode<Label>("Camera2D/CanvasLayer/Label2").Text = "Bois";
+			GetNode<Label>("Camera2D/CanvasLayer/Livraison").Text = "Puis-je livrer?:";
+			GetNode<Label>("Camera2D/CanvasLayer/bool").Text = "Non";
+		}
+		else
+		{
+			GetNode<Label>("Camera2D/CanvasLayer/Label").Text = "Rocks";
+			GetNode<Label>("Camera2D/CanvasLayer/Label2").Text = "Wood";
+			GetNode<Label>("Camera2D/CanvasLayer/Livraison").Text = "Can I deliver?:";
+			GetNode<Label>("Camera2D/CanvasLayer/bool").Text = "No";
+		}
 	}
 
 
@@ -80,7 +95,14 @@ public class MC : KinematicBody2D
   	{	
 		if(Forge.delievery_ready)
 		{
-			livraison.Text = "oui";
+			if(language == "fr")
+		{
+			livraison.Text = "Oui";
+		}
+		else
+		{
+			livraison.Text = "Yes";
+		}
 		}
 		ScoreWood.Text = rocks.ToString();				
 		score.Text = ressources.ToString();

@@ -5,16 +5,16 @@
 [ext_resource path="res://MC/MC.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Level1/Delivery/Delivery.cs" type="Script" id=4]
 
-[sub_resource type="RectangleShape2D" id=4]
+[sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 71.1486, 61.9467 )
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 97, 10 )
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 515.091, 12.1368 )
 
-[sub_resource type="AnimationNodeStateMachinePlayback" id=3]
+[sub_resource type="AnimationNodeStateMachinePlayback" id=4]
 
 [node name="Delivery" type="Node2D"]
 script = ExtResource( 4 )
@@ -80,58 +80,57 @@ collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
 position = Vector2( 736.15, 241.577 )
-shape = SubResource( 4 )
+shape = SubResource( 1 )
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2( 3, 413 )
 rotation = 1.5708
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2( 512.911, 24.7156 )
-shape = SubResource( 2 )
+shape = SubResource( 3 )
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
 position = Vector2( 512.805, 609.111 )
-shape = SubResource( 2 )
+shape = SubResource( 3 )
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
 position = Vector2( 1031.15, 354.188 )
 rotation = 1.5708
-shape = SubResource( 2 )
+shape = SubResource( 3 )
 
 [node name="StaticBody2D4" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
 position = Vector2( -8.24744, 369.902 )
 rotation = 1.5708
-shape = SubResource( 2 )
+shape = SubResource( 3 )
 
 [node name="MC" parent="." instance=ExtResource( 3 )]
 position = Vector2( 45.5974, 410.502 )
 
 [node name="AnimationTree" parent="MC" index="2"]
-parameters/playback = SubResource( 3 )
+parameters/playback = SubResource( 4 )
 
 [node name="Camera2D" parent="MC" index="4"]
 limit_left = 0
 limit_top = 0
 limit_right = 1025
 limit_bottom = 600
+
 [connection signal="area_entered" from="Area2D2" to="." method="_on_Area2D2_area_entered"]
 [connection signal="area_exited" from="Area2D2" to="." method="_on_Area2D2_area_exited"]
 [connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
 
 [editable path="MC"]
-
 [editable path="MC/HitboxPivot/Hitbox"]
-
 [editable path="MC/Hurtbox"]

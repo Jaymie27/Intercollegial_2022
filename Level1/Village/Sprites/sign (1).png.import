@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/sign.png-73fb27acd05b55e0fa00df22497e0ec3.stex"
+path="res://.import/sign (1).png-a0ea4d6dbce6f07ebca183fb8625c2e8.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Level1/Village/Sprites/sign.png"
-dest_files=[ "res://.import/sign.png-73fb27acd05b55e0fa00df22497e0ec3.stex" ]
+source_file="res://Level1/Village/Sprites/sign (1).png"
+dest_files=[ "res://.import/sign (1).png-a0ea4d6dbce6f07ebca183fb8625c2e8.stex" ]
 
 [params]
 
