@@ -55,7 +55,7 @@ public class TitleScreen : Node2D
 					}
 				}
 			}
-			else if(Input.IsActionPressed("ui_attack"))
+			else if(Input.IsActionPressed("ui_accept"))
 			{
 				if(released == true)
 				{
