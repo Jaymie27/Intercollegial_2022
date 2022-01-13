@@ -62,4 +62,18 @@ position = Vector2( -21.0473, -10.6944 )
 scale = Vector2( 0.281768, 0.215041 )
 texture = ExtResource( 3 )
 
+[node name="Label4" type="Label" parent="Sprite"]
+modulate = Color( 0, 0, 0, 1 )
+margin_left = -20.6217
+margin_top = -20.7893
+margin_right = 58.3783
+margin_bottom = 10.2107
+rect_scale = Vector2( 0.5, 0.5 )
+text = "CRAFT &
+DELIVERY"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Camera2D" type="Camera2D" parent="."]

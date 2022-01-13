@@ -33,7 +33,7 @@ public class Delivery : Node2D
 			}
 			else
 			{
-				label.Text = "Retourne travaillez! Nous attendons votre livraison!";
+				label.Text = "Retourne travailler! Nous attendons votre livraison!";
 			}
 		}
 	}

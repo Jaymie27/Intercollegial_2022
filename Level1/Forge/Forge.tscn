@@ -181,9 +181,6 @@ shape = SubResource( 5 )
 position = Vector2( 883.941, 199.469 )
 scale = Vector2( 3, 3 )
 
-[node name="Sprite" parent="ViewportContainer/Viewport/MC" index="0"]
-frame = 20
-
 [node name="AnimationTree" parent="ViewportContainer/Viewport/MC" index="2"]
 parameters/playback = SubResource( 6 )
 
@@ -265,6 +262,7 @@ text = "Emporter la livraison"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
 [connection signal="area_entered" from="ViewportContainer/Viewport/LZone" to="." method="_on_LZone_area_entered"]
 [connection signal="area_exited" from="ViewportContainer/Viewport/LZone" to="." method="_on_LZone_area_exited"]
 [connection signal="area_entered" from="ViewportContainer/Viewport/FZone" to="." method="_on_FZone_area_entered"]
@@ -274,7 +272,5 @@ __meta__ = {
 [connection signal="area_entered" from="ViewportContainer/Viewport/Area2D" to="." method="_on_Area2D_area_entered"]
 
 [editable path="ViewportContainer/Viewport/MC"]
-
 [editable path="ViewportContainer/Viewport/MC/HitboxPivot/Hitbox"]
-
 [editable path="ViewportContainer/Viewport/MC/Hurtbox"]

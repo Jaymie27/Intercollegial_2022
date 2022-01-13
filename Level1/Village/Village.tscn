@@ -89,7 +89,7 @@ position = Vector2( 141.38, 335 )
 shape = SubResource( 3 )
 
 [node name="MC" parent="." instance=ExtResource( 3 )]
-position = Vector2( 143.183, 382.295 )
+position = Vector2( 144.307, 420.127 )
 
 [node name="Sprite" parent="MC" index="0"]
 frame = 21

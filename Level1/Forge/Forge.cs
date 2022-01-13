@@ -31,6 +31,25 @@ public class Forge : Node2D
 		T = GetNode<Label>("t");
 		F = GetNode<Label>("f");
 		L = GetNode<Label>("l");
+		
+		if(MC.language == "fr")
+		{
+			T.Text = "Non disponible";
+			F.Text = "Non disponible";
+			L.Text = "Non disponible";
+			GetNode<Label>("Label").Text = "Tremper les ressources";
+			GetNode<Label>("Label2").Text = "Forger";
+			GetNode<Label>("Label3").Text = "Prendre la livraison";
+		}
+		else
+		{
+			T.Text = "Unavailable";
+			F.Text = "Unavailable";
+			L.Text = "Unavailable";
+			GetNode<Label>("Label").Text = "Temper resources";
+			GetNode<Label>("Label2").Text = "Forge";
+			GetNode<Label>("Label3").Text = "Take the delivery";
+		}
 	}
 	
 	public override void _Process(float delta)
@@ -39,7 +58,14 @@ public class Forge : Node2D
 		{
 			T.Visible = true;
 			T.Modulate = green;
-			T.Text = "appuyer sur E";
+			if(MC.language == "fr")
+			{
+				T.Text = "Appuyez sur E";
+			}
+			else
+			{
+				T.Text = "Press E";
+			}
 			canT = true;
 		}
 	}	
@@ -125,28 +151,63 @@ public class Forge : Node2D
 				{
 					MC.ressources = 0;
 					MC.rocks = 0;
-					T.Text = "Fait";
+					if(MC.language == "fr")
+					{
+						T.Text = "Fait";
+					}
+					else
+					{
+						T.Text = "Done";
+					}
 					canT = false;
 					canF = true;
 					F.Visible = true;
-					F.Text = "appuyer sur E";
+					if(MC.language == "fr")
+					{
+						F.Text = "Appuyez sur E";
+					}
+					else
+					{
+						F.Text = "Press E";
+					}
 					F.Modulate = green;
 				}
 				
 				if(canF && isFrontF)
 				{
-					F.Text = "Fait";
+					if(MC.language == "fr")
+					{
+						L.Text = "Fait";
+					}
+					else
+					{
+						L.Text = "Done";
+					}
 					canF = false;
 					canL = true;
 					L.Visible = true;
-					L.Text = "appuyer sur E";
+					if(MC.language == "fr")
+					{
+						L.Text = "Appuyez sur E";
+					}
+					else
+					{
+						L.Text = "Press E";
+					}
 					L.Modulate = green;
 				}
 			
 			
 				if(canL && isFrontL)
 				{
-					L.Text = "Vous pouvez livrer !";
+					if(MC.language == "fr")
+					{
+						L.Text = "Vous pouvez livrer!";
+					}
+					else
+					{
+						L.Text = "You can deliver!";
+					}
 					canL = false;
 					delievery_ready = true;
 				}	
