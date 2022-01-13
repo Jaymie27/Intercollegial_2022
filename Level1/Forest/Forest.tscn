@@ -144,7 +144,7 @@ shape = SubResource( 4 )
 position = Vector2( 73.2027, 591.18 )
 
 [node name="Sprite" parent="MC" index="0"]
-frame = 20
+frame = 21
 
 [node name="AnimationTree" parent="MC" index="2"]
 parameters/playback = SubResource( 5 )
