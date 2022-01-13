@@ -20,6 +20,20 @@ public class OptionsMenu : Node2D
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
+		if(MC.language == "fr")
+		{
+			GetNode<Label>("Sprite/Label").Text = "Langue";
+			GetNode<Label>("Sprite/Label2").Text = "Voix";
+			GetNode<Label>("Sprite/Label3").Text = "Retourner au menu";
+		}
+		else
+		{
+			GetNode<Label>("Sprite/Label").Text = "Language";
+			GetNode<Label>("Sprite/Label2").Text = "Voices";
+			GetNode<Label>("Sprite/Label3").Text = "Return to menu";
+		}
+		
+		
 		GetNode<Sprite>("Sprite/Selection").Position = GetNode<Position2D>("Sprite/Position2D2").Position;
 		if(MC.language == "fr")
 		{
