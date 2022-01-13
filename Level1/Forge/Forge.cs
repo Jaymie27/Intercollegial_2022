@@ -177,11 +177,11 @@ public class Forge : Node2D
 				{
 					if(MC.language == "fr")
 					{
-						L.Text = "Fait";
+						F.Text = "Fait";
 					}
 					else
 					{
-						L.Text = "Done";
+						F.Text = "Done";
 					}
 					canF = false;
 					canL = true;

@@ -10,6 +10,9 @@ public class EndingScene : Node2D
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
+		MC.life = 10;
+		MC.ressources = 0;
+		MC.rocks = 0;
 		if(MC.language == "fr")
 		{
 			GetNode<Label>("Sprite/Label").Text = "Félicitations!";

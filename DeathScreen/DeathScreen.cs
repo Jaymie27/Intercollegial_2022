@@ -29,6 +29,9 @@ public class DeathScreen : Node2D
 			{
 				if(released == true)
 				{
+					MC.life = 10;
+					MC.ressources = 0;
+					MC.rocks = 0;
 					GetTree().ChangeScene("res://TitleScreen/TitleScreen.tscn");
 				}
 			}
