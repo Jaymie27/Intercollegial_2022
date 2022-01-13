@@ -28,12 +28,26 @@ public class Delivery : Node2D
 			label.Visible = true;
 			if(Forge.delievery_ready)
 			{
-				label.Text = "Bon travail ! Appuyez sur F";
+				if(MC.language == "fr")
+				{
+					label.Text = "Bon travail! Appuyez sur F";
+				}
+				else
+				{
+					label.Text = "Good work! Press F";
+				}
 				finish = true;
 			}
 			else
 			{
-				label.Text = "Retourne travailler! Nous attendons votre livraison!";
+				if(MC.language == "fr")
+				{
+					label.Text = "Retourne travailler! Nous attendons votre livraison!";
+				}
+				else
+				{
+					label.Text = "Get back to work! We are waiting for your delivery!";
+				}
 			}
 		}
 	}
