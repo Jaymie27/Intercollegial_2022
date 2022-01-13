@@ -216,7 +216,6 @@ position = Vector2( -47.5907, 8.85057 )
 
 [node name="Position2D4" type="Position2D" parent="Sprite"]
 position = Vector2( 35.4744, -4.84673 )
-scale = Vector2( 1, 1 )
 
 [node name="Position2D5" type="Position2D" parent="Sprite"]
 position = Vector2( 10.6174, -4.74136 )
