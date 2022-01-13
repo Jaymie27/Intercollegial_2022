@@ -153,7 +153,7 @@ margin_top = -6.90036
 margin_right = 7.7747
 margin_bottom = 7.09964
 rect_scale = Vector2( 0.5, 0.5 )
-text = "Voices"
+text = "Voices (N/A)"
 __meta__ = {
 "_edit_use_anchors_": false
 }

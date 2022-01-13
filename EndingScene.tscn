@@ -13,12 +13,12 @@ texture = ExtResource( 2 )
 
 [node name="Label" type="Label" parent="Sprite"]
 modulate = Color( 0.639216, 0, 0, 1 )
-margin_left = -55.0265
-margin_top = -10.6392
-margin_right = 17.9735
-margin_bottom = 6.36081
-rect_scale = Vector2( 1.5, 1.5 )
-text = "Game Over"
+margin_left = -50.4459
+margin_top = -14.8542
+margin_right = 52.5541
+margin_bottom = 2.14577
+text = "Félicitations!"
+align = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
