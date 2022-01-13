@@ -62,7 +62,7 @@ public class TitleScreen : Node2D
 					released = false;
 					if(currentSelection == selection.PLAY)
 					{
-						GetTree().ChangeScene("res://Level1/Village/Village.tscn");
+						GetTree().ChangeScene("res://IntroScene/IntroScene.tscn");
 						QueueFree();
 					}
 					else if(currentSelection == selection.OPTIONS)
