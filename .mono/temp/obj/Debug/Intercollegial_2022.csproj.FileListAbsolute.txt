@@ -15,3 +15,12 @@ C:\Users\j_des\OneDrive\Documents\Intercollegial_2022\.mono\temp\obj\Debug\Inter
 C:\Users\j_des\OneDrive\Documents\Intercollegial_2022\.mono\temp\obj\Debug\Intercollegial_2022.csproj.CoreCompileInputs.cache
 C:\Users\j_des\OneDrive\Documents\Intercollegial_2022\.mono\temp\obj\Debug\Intercollegial_2022.dll
 C:\Users\j_des\OneDrive\Documents\Intercollegial_2022\.mono\temp\obj\Debug\Intercollegial_2022.pdb
+C:\Users\Ioanb\Documents\GitHub\Intercollegial_2022\.mono\temp\bin\Debug\Intercollegial_2022.dll
+C:\Users\Ioanb\Documents\GitHub\Intercollegial_2022\.mono\temp\bin\Debug\Intercollegial_2022.pdb
+C:\Users\Ioanb\Documents\GitHub\Intercollegial_2022\.mono\temp\obj\Debug\Intercollegial_2022.csproj.AssemblyReference.cache
+C:\Users\Ioanb\Documents\GitHub\Intercollegial_2022\.mono\temp\obj\Debug\Intercollegial_2022.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Ioanb\Documents\GitHub\Intercollegial_2022\.mono\temp\obj\Debug\Intercollegial_2022.AssemblyInfoInputs.cache
+C:\Users\Ioanb\Documents\GitHub\Intercollegial_2022\.mono\temp\obj\Debug\Intercollegial_2022.AssemblyInfo.cs
+C:\Users\Ioanb\Documents\GitHub\Intercollegial_2022\.mono\temp\obj\Debug\Intercollegial_2022.csproj.CoreCompileInputs.cache
+C:\Users\Ioanb\Documents\GitHub\Intercollegial_2022\.mono\temp\obj\Debug\Intercollegial_2022.dll
+C:\Users\Ioanb\Documents\GitHub\Intercollegial_2022\.mono\temp\obj\Debug\Intercollegial_2022.pdb
