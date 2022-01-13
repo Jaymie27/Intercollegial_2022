@@ -15,7 +15,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Intercollegial_2022"
-run/main_scene="res://TitleScreen/TitleScreen.tscn"
+run/main_scene="res://OptionsMenu/OptionsMenu.tscn"
 config/icon="res://icon.png"
 
 [display]
