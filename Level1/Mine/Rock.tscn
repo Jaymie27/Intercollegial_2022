@@ -36,9 +36,9 @@ margin_top = -25.0
 margin_right = 51.0
 margin_bottom = -11.0
 text = "(appuyez sur R)"
-percent_visible = -0.0769231
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
 [connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
 [connection signal="area_exited" from="Area2D" to="." method="_on_Area2D_area_exited"]

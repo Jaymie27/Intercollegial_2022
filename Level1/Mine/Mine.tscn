@@ -55,9 +55,6 @@ position = Vector2( 185.015, 108.375 )
 [node name="Sprite" parent="Rock2" index="0"]
 flip_h = true
 
-[node name="Label" parent="Rock2" index="3"]
-percent_visible = 1.0
-
 [node name="Rock4" parent="." instance=ExtResource( 3 )]
 position = Vector2( 270.542, 112.829 )
 
@@ -73,7 +70,6 @@ flip_h = true
 [node name="Label" parent="Rock6" index="3"]
 text = ""
 align = 1
-percent_visible = 1.0
 
 [node name="Rock7" parent="." instance=ExtResource( 3 )]
 position = Vector2( 493.266, 112.829 )
@@ -84,17 +80,11 @@ position = Vector2( 494.157, 146.684 )
 [node name="Sprite" parent="Rock8" index="0"]
 flip_h = true
 
-[node name="Label" parent="Rock8" index="3"]
-percent_visible = 1.0
-
 [node name="Rock9" parent="." instance=ExtResource( 3 )]
 position = Vector2( 655.41, 241.119 )
 
 [node name="Sprite" parent="Rock9" index="0"]
 flip_h = true
-
-[node name="Label" parent="Rock9" index="3"]
-percent_visible = 1.0
 
 [node name="Rock10" parent="." instance=ExtResource( 3 )]
 position = Vector2( 687.482, 242.01 )
@@ -104,9 +94,6 @@ position = Vector2( 398.672, 562.167 )
 
 [node name="Sprite" parent="Rock11" index="0"]
 flip_h = true
-
-[node name="Label" parent="Rock11" index="3"]
-percent_visible = 1.0
 
 [node name="Rock12" parent="." instance=ExtResource( 3 )]
 position = Vector2( 689.264, 367.626 )
@@ -123,9 +110,6 @@ position = Vector2( 848.779, 145.338 )
 [node name="Sprite" parent="Rock15" index="0"]
 flip_h = true
 
-[node name="Label" parent="Rock15" index="3"]
-percent_visible = 1.0
-
 [node name="Rock16" parent="." instance=ExtResource( 3 )]
 position = Vector2( 1133.88, 273.299 )
 
@@ -138,17 +122,11 @@ position = Vector2( 1039.6, 145.338 )
 [node name="Sprite" parent="Rock18" index="0"]
 flip_h = true
 
-[node name="Label" parent="Rock18" index="3"]
-percent_visible = 1.0
-
 [node name="Rock19" parent="." instance=ExtResource( 3 )]
 position = Vector2( 1038.47, 564.016 )
 
 [node name="Sprite" parent="Rock19" index="0"]
 flip_h = true
-
-[node name="Label" parent="Rock19" index="3"]
-percent_visible = 1.0
 
 [node name="Rock20" parent="." instance=ExtResource( 3 )]
 position = Vector2( 1005.92, 561.771 )
@@ -162,9 +140,6 @@ position = Vector2( 1133.88, 465.24 )
 [node name="Sprite" parent="Rock22" index="0"]
 flip_h = true
 
-[node name="Label" parent="Rock22" index="3"]
-percent_visible = 1.0
-
 [node name="Rock23" parent="." instance=ExtResource( 3 )]
 position = Vector2( 1201.23, 469.729 )
 
@@ -177,9 +152,6 @@ position = Vector2( 1296.64, 403.504 )
 [node name="Sprite" parent="Rock25" index="0"]
 flip_h = true
 
-[node name="Label" parent="Rock25" index="3"]
-percent_visible = 1.0
-
 [node name="Rock26" parent="." instance=ExtResource( 3 )]
 position = Vector2( 1456.03, 82.48 )
 
@@ -191,9 +163,6 @@ position = Vector2( 1554.81, 180.134 )
 
 [node name="Sprite" parent="Rock28" index="0"]
 flip_h = true
-
-[node name="Label" parent="Rock28" index="3"]
-percent_visible = 1.0
 
 [node name="Rock29" parent="." instance=ExtResource( 3 )]
 position = Vector2( 1711.95, 495.546 )
@@ -213,9 +182,6 @@ position = Vector2( 1677.16, 368.708 )
 [node name="Sprite" parent="Rock33" index="0"]
 flip_h = true
 
-[node name="Label" parent="Rock33" index="3"]
-percent_visible = 1.0
-
 [node name="Rock34" parent="." instance=ExtResource( 3 )]
 position = Vector2( 1681.65, 400.137 )
 
@@ -227,6 +193,9 @@ position = Vector2( 149.118, 109.373 )
 
 [node name="MC" parent="." instance=ExtResource( 2 )]
 position = Vector2( 44.7867, 529.678 )
+
+[node name="Sprite" parent="MC" index="0"]
+frame = 20
 
 [node name="AnimationTree" parent="MC" index="2"]
 parameters/playback = SubResource( 2 )
