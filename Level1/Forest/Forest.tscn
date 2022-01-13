@@ -134,6 +134,9 @@ shape = SubResource( 4 )
 [node name="MC" parent="." instance=ExtResource( 3 )]
 position = Vector2( 73.2027, 591.18 )
 
+[node name="Sprite" parent="MC" index="0"]
+frame = 21
+
 [node name="AnimationTree" parent="MC" index="2"]
 parameters/playback = SubResource( 5 )
 
@@ -272,9 +275,7 @@ scale = Vector2( 1.5, 1.5 )
 [node name="Pine2" parent="YSort" instance=ExtResource( 4 )]
 position = Vector2( 825.149, 44.326 )
 scale = Vector2( 1.5, 1.5 )
-[connection signal="area_entered" from="ToVillage" to="." method="_on_ToVillage_area_entered"]
 [connection signal="area_entered" from="ToMine" to="." method="_on_ToMine_area_entered"]
-[connection signal="area_entered" from="ToShipping" to="." method="_on_ToShipping_area_entered"]
 
 [editable path="MC"]
 

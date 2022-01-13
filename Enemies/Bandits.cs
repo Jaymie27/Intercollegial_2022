@@ -102,8 +102,10 @@ public class Bandits : KinematicBody2D
 		break;
 		
 		case state.ATTACK:
+			GD.Print("Attack");
 			animationState.Travel("Attack");
-			accelerate_towards_point(MC.pos, delta);
+			Velocity = Vector2.Zero;
+			//accelerate_towards_point(MC.pos, delta);
 		break;
 		
 		case state.HURT:
@@ -152,7 +154,7 @@ public class Bandits : KinematicBody2D
 	
 	private void MEURT()
 	{
-		if(life == 0)
+		if(life <= 0)
 		{
 			QueueFree();
 		}
@@ -217,7 +219,7 @@ public class Bandits : KinematicBody2D
 		if(area.IsInGroup("sword"))
 		{
 		  life --;
-		  if(life == 0)
+		  if(life <= 0)
 		  {
 			 currentState = state.DEAD;
 		  }

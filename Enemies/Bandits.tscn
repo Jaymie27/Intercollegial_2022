@@ -728,7 +728,8 @@ radius = 29.2354
 radius = 244.243
 
 [sub_resource type="CapsuleShape2D" id=56]
-radius = 19.6136
+radius = 31.6184
+height = 30.1893
 
 [node name="Bandits" type="KinematicBody2D"]
 collision_layer = 8
@@ -774,8 +775,8 @@ parameters/Run/blend_position = Vector2( 0, 0 )
 shape = SubResource( 52 )
 
 [node name="HitboxPivot" type="Position2D" parent="."]
-position = Vector2( 0, 15 )
-rotation = 1.5708
+position = Vector2( 0, -15 )
+rotation = 4.71239
 
 [node name="Hitbox" parent="HitboxPivot" instance=ExtResource( 1 )]
 collision_layer = 0
@@ -797,6 +798,7 @@ shape = SubResource( 54 )
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 
 [node name="test" type="Area2D" parent="."]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="test"]
 position = Vector2( 0.529732, 0 )
@@ -806,6 +808,7 @@ shape = SubResource( 55 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="attackzone"]
 shape = SubResource( 56 )
+
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_Hurtbox_area_entered"]
 [connection signal="area_entered" from="test" to="." method="_on_test_area_entered"]
 [connection signal="area_exited" from="test" to="." method="_on_test_area_exited"]
@@ -813,7 +816,5 @@ shape = SubResource( 56 )
 [connection signal="area_exited" from="attackzone" to="." method="_on_attackzone_area_exited"]
 
 [editable path="HitboxPivot/Hitbox"]
-
 [editable path="Hurtbox"]
-
 [editable path="WanderController"]
