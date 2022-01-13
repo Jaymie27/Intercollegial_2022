@@ -19,7 +19,7 @@ public class MC : KinematicBody2D
 	
 	public static int life = 10;
 	
-	bool released = true;
+	bool released = false;
 	
 	bool[] timer = new bool[300];
 

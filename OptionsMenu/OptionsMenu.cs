@@ -21,8 +21,22 @@ public class OptionsMenu : Node2D
 	public override void _Ready()
 	{
 		GetNode<Sprite>("Sprite/Selection").Position = GetNode<Position2D>("Sprite/Position2D2").Position;
-		GetNode<Sprite>("Sprite/Selection2").Position = GetNode<Position2D>("Sprite/Position2D6").Position;
-		GetNode<Sprite>("Sprite/Selection3").Position = GetNode<Position2D>("Sprite/Position2D4").Position;
+		if(MC.language == "fr")
+		{
+			GetNode<Sprite>("Sprite/Selection2").Position = GetNode<Position2D>("Sprite/Position2D7").Position;
+		}
+		else
+		{
+			GetNode<Sprite>("Sprite/Selection2").Position = GetNode<Position2D>("Sprite/Position2D6").Position;
+		}
+		if(MC.voices == "fr")
+		{
+			GetNode<Sprite>("Sprite/Selection3").Position = GetNode<Position2D>("Sprite/Position2D5").Position;
+		}
+		else
+		{
+			GetNode<Sprite>("Sprite/Selection3").Position = GetNode<Position2D>("Sprite/Position2D4").Position;
+		}
 	}
 
 //  // Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -87,14 +101,28 @@ public class OptionsMenu : Node2D
 						released = false;
 						if(currentSelection3 == selection2.ENGLISH)
 						{
+							MC.voices = "fr";
 							currentSelection3 = selection2.FRENCH;	
 							GetNode<Sprite>("Sprite/Selection3").Position = GetNode<Position2D>("Sprite/Position2D5").Position;
 						}
 						else
 						{
+							MC.voices = "en";
 							currentSelection3 = selection2.ENGLISH;	
 							GetNode<Sprite>("Sprite/Selection3").Position = GetNode<Position2D>("Sprite/Position2D4").Position;
 						}
+					}
+				}
+			}
+			else if(Input.IsActionPressed("ui_attack"))
+			{
+				if(released == true)
+				{
+					released = false;
+					if(currentSelection == selection.RETURN)
+					{
+						GetTree().ChangeScene("res://TitleScreen/TitleScreen.tscn");
+						QueueFree();
 					}
 				}
 			}

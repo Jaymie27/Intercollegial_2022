@@ -91,6 +91,9 @@ shape = SubResource( 3 )
 [node name="MC" parent="." instance=ExtResource( 3 )]
 position = Vector2( 143.183, 382.295 )
 
+[node name="Sprite" parent="MC" index="0"]
+frame = 21
+
 [node name="AnimationTree" parent="MC" index="2"]
 parameters/playback = SubResource( 4 )
 
@@ -105,11 +108,10 @@ margin_left = -3.45763
 margin_top = -12.9397
 margin_right = -3.45764
 margin_bottom = -12.9397
+
 [connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
 [connection signal="area_entered" from="Area2D2" to="." method="_on_Area2D2_area_entered"]
 
 [editable path="MC"]
-
 [editable path="MC/HitboxPivot/Hitbox"]
-
 [editable path="MC/Hurtbox"]
