@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Level1/Village/Vilage.tres" type="TileSet" id=1]
 [ext_resource path="res://Level1/Forest/Forest.tres" type="TileSet" id=2]
 [ext_resource path="res://MC/MC.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Level1/Village/Village.cs" type="Script" id=4]
+[ext_resource path="res://Level1/Village/Sprites/sign.png" type="Texture" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 120.567, 10 )
@@ -14,6 +15,9 @@ extents = Vector2( 542.291, 11.286 )
 [sub_resource type="CapsuleShape2D" id=3]
 radius = 16.6196
 height = 2.78473
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 33.0514, 51.8148 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=4]
 
@@ -46,7 +50,7 @@ tile_set = ExtResource( 1 )
 cell_size = Vector2( 32, 32 )
 collision_mask = 0
 format = 1
-tile_data = PoolIntArray( 393226, 2, 0, 393231, 2, 0, 393236, 2, 0, 393241, 2, 0, 524291, 1, 0 )
+tile_data = PoolIntArray( 393226, 2, 0, 393231, 2, 0, 393236, 2, 0, 524291, 1, 0 )
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_mask = 2147483651
@@ -88,11 +92,40 @@ shape = SubResource( 2 )
 position = Vector2( 141.38, 335 )
 shape = SubResource( 3 )
 
+[node name="KinematicBody2D2" type="KinematicBody2D" parent="."]
+
+[node name="Sprite" type="Sprite" parent="KinematicBody2D2"]
+position = Vector2( 883.124, 299.172 )
+scale = Vector2( 1.10657, 0.89592 )
+texture = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D2"]
+position = Vector2( 800.793, 361.189 )
+scale = Vector2( 0.62835, 0.523 )
+shape = SubResource( 5 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="KinematicBody2D2"]
+position = Vector2( 955.91, 364.561 )
+scale = Vector2( 0.62835, 0.523 )
+shape = SubResource( 5 )
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="KinematicBody2D2"]
+position = Vector2( 916.853, 337.377 )
+scale = Vector2( 0.62835, 0.523 )
+shape = SubResource( 5 )
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="KinematicBody2D2"]
+position = Vector2( 877.165, 337.377 )
+scale = Vector2( 0.62835, 0.523 )
+shape = SubResource( 5 )
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="KinematicBody2D2"]
+position = Vector2( 837.547, 337.377 )
+scale = Vector2( 0.62835, 0.523 )
+shape = SubResource( 5 )
+
 [node name="MC" parent="." instance=ExtResource( 3 )]
 position = Vector2( 946.265, 414.857 )
-
-[node name="Sprite" parent="MC" index="0"]
-frame = 20
 
 [node name="AnimationTree" parent="MC" index="2"]
 parameters/playback = SubResource( 4 )
@@ -102,11 +135,10 @@ limit_left = 0
 limit_top = 0
 limit_right = 1025
 limit_bottom = 600
+
 [connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
 [connection signal="area_entered" from="Area2D2" to="." method="_on_Area2D2_area_entered"]
 
 [editable path="MC"]
-
 [editable path="MC/HitboxPivot/Hitbox"]
-
 [editable path="MC/Hurtbox"]

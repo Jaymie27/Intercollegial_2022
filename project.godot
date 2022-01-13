@@ -15,7 +15,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Intercollegial_2022"
-run/main_scene="res://DeathScreen/DeathScreen.tscn"
+run/main_scene="res://Level1/Forest/Forest.tscn"
 config/icon="res://icon.png"
 
 [display]
