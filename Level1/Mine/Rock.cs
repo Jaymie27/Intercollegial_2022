@@ -35,7 +35,14 @@ public class Rock : StaticBody2D
 			else
 			{
 				information.Modulate = red;
-				information.Text = "Plein";
+				if(MC.language == "fr")
+				{
+					information.Text = "Plein";
+				}
+				else
+				{
+					information.Text = "Full";
+				}
 			}
 			
 		}

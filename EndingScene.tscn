@@ -1,17 +1,38 @@
-[gd_scene format=2]
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://EndingScene.cs" type="Script" id=1]
+[ext_resource path="res://Letters/letter-text1.png" type="Texture" id=2]
 
 [node name="EndingScene" type="Node2D"]
+script = ExtResource( 1 )
 
-[node name="Label" type="Label" parent="."]
-modulate = Color( 1, 0, 0, 1 )
-margin_left = 375.816
-margin_top = 197.239
-margin_right = 1079.82
-margin_bottom = 547.239
-text = "Fin
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 512.62, 303.46 )
+scale = Vector2( 8.00577, 9.49094 )
+texture = ExtResource( 2 )
 
-yer 3h du matin btw
-"
+[node name="Label" type="Label" parent="Sprite"]
+modulate = Color( 0.639216, 0, 0, 1 )
+margin_left = -55.0265
+margin_top = -10.6392
+margin_right = 17.9735
+margin_bottom = 6.36081
+rect_scale = Vector2( 1.5, 1.5 )
+text = "Game Over"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Label2" type="Label" parent="Sprite"]
+modulate = Color( 0, 0, 0, 1 )
+margin_left = -22.9984
+margin_top = 15.8322
+margin_right = 207.002
+margin_bottom = 29.8322
+rect_scale = Vector2( 0.2, 0.2 )
+text = "Press space to return to title screen"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Camera2D" type="Camera2D" parent="."]
