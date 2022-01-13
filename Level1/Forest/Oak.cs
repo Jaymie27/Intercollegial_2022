@@ -19,27 +19,9 @@ public class Oak : StaticBody2D
 			label.Visible = true;
 			if(MC.rocks == 5)
 			{
-				if(MC.language == "fr")
-				{
-					label.Text = "Plein";
-				}
-				else
-				{
-					label.Text = "Full";
-				}
+				label.Text = "Plein";
 				label.Modulate = red;
-			}
-			else
-			{
-				if(MC.language == "fr")
-				{
-					label.Text = "Appuyez sur Espace";
-				}
-				else
-				{
-					label.Text = "Press space";
-				}
-			}
+			}	
 		}	
 		if(area.IsInGroup("sword"))
 		{

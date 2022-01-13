@@ -58,14 +58,12 @@ public class Bandits : KinematicBody2D
 		seek_player();
 		if(wanderController.getTimeLeft() == 0)
 		{
-			GD.Print("idle");
 			update_wander();
 		}
 
 		break;
 
 	  case state.WANDER:
-		GD.Print("wander");
 		animationState.Travel("Run");
 		seek_player();
 		if(wanderController.getTimeLeft() == 0)
@@ -78,9 +76,6 @@ public class Bandits : KinematicBody2D
 		
 		string p = wanderController.get_target_position().ToString();
 		string mypos = this.Position.ToString();
-		//GD.Print("target :");
-		//GD.Print(p);
-		//GD.Print(mypos);
 		
 
 		if(this.GlobalPosition.DistanceTo(wanderController.get_target_position()) <= wander_target_range)
@@ -91,7 +86,6 @@ public class Bandits : KinematicBody2D
 		break;
 		
 	  case state.CHASE:
-		GD.Print("Chase");
 		animationState.Travel("Run");
 		//player = (GetNode("PlayerDetectionZone") as PlayerDetectionZone).player;
 		
@@ -105,7 +99,8 @@ public class Bandits : KinematicBody2D
 			GD.Print("Attack");
 			animationState.Travel("Attack");
 			Velocity = Vector2.Zero;
-			//accelerate_towards_point(MC.pos, delta);
+			accelerate_towards_point(MC.pos, delta);
+			playAttack();
 		break;
 		
 		case state.HURT:
@@ -131,14 +126,15 @@ public class Bandits : KinematicBody2D
 	private void accelerate_towards_point(Vector2 point, float delta)
 	{
 		Direction = this.GlobalPosition.DirectionTo(point);
-		Velocity = Velocity.MoveToward(Direction * MAX_SPEED, ACCELERATION * delta);
-		//aSprite.FlipH = Velocity.x < 0;
+		if(currentState != state.ATTACK)
+		{
+			Velocity = Velocity.MoveToward(Direction * MAX_SPEED, ACCELERATION * delta);
+		}
 	}
 	private void seek_player()
 	{
 		if(PlayerDetectionZone.inside == true)
 		{
-			GD.Print("goInside");
 			currentState = state.CHASE;
 		}
 	}
@@ -150,6 +146,12 @@ public class Bandits : KinematicBody2D
 		state_list = Shuffle<state> (state_list, rand);
 		return state_list[0];
 		
+	}
+
+	private void playAttack()
+	{
+		Direction = Direction.Normalized();
+		animationTree.Set("parameters/Attack/blend_position", Direction);
 	}
 	
 	private void MEURT()
@@ -211,7 +213,6 @@ public class Bandits : KinematicBody2D
 	private void attack_finished()
 	{
 		EmitSignal("attack");
-		GD.Print("hey criss");
 	}
 	
 	private void _on_Hurtbox_area_entered(Area2D area)
