@@ -23,13 +23,13 @@ public class OptionsMenu : Node2D
 		if(MC.language == "fr")
 		{
 			GetNode<Label>("Sprite/Label").Text = "Langue";
-			GetNode<Label>("Sprite/Label2").Text = "Voix";
+			GetNode<Label>("Sprite/Label2").Text = "Voix (N/A)";
 			GetNode<Label>("Sprite/Label3").Text = "Retourner au menu";
 		}
 		else
 		{
 			GetNode<Label>("Sprite/Label").Text = "Language";
-			GetNode<Label>("Sprite/Label2").Text = "Voices";
+			GetNode<Label>("Sprite/Label2").Text = "Voices (N/A)";
 			GetNode<Label>("Sprite/Label3").Text = "Return to menu";
 		}
 		
