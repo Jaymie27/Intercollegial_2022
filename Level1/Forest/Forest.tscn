@@ -156,6 +156,78 @@ limit_bottom = 1215
 anchor_left = 0.00164235
 anchor_right = 1.00164
 
+[node name="Bandits" parent="." instance=ExtResource( 8 )]
+position = Vector2( 362.616, 597.426 )
+
+[node name="Bandits2" parent="." instance=ExtResource( 8 )]
+position = Vector2( 883.377, 595.131 )
+
+[node name="Bandits3" parent="." instance=ExtResource( 8 )]
+position = Vector2( 623.834, 141.56 )
+
+[node name="Bandits4" parent="." instance=ExtResource( 8 )]
+position = Vector2( 1069.85, 131.48 )
+
+[node name="Bandits5" parent="." instance=ExtResource( 8 )]
+position = Vector2( 1536.02, 585.052 )
+
+[node name="Bandits6" parent="." instance=ExtResource( 8 )]
+position = Vector2( 424.766, 960.509 )
+
+[node name="Bandits7" parent="." instance=ExtResource( 8 )]
+position = Vector2( 704.468, 857.195 )
+
+[node name="Bandits8" parent="." instance=ExtResource( 8 )]
+position = Vector2( 1062.29, 968.068 )
+
+[node name="Bandits9" parent="." instance=ExtResource( 8 )]
+position = Vector2( 1478.06, 1099.1 )
+
+[node name="Bandits10" parent="." instance=ExtResource( 8 )]
+position = Vector2( 1767.84, 763.961 )
+
+[node name="Bandits11" parent="." instance=ExtResource( 8 )]
+position = Vector2( 603.675, -138.143 )
+
+[node name="Bandits12" parent="." instance=ExtResource( 8 )]
+position = Vector2( 2090.12, -505.885 )
+
+[node name="Bandits13" parent="." instance=ExtResource( 8 )]
+position = Vector2( 1809.8, -233.578 )
+
+[node name="Bandits14" parent="." instance=ExtResource( 8 )]
+position = Vector2( 1363.96, -137.47 )
+
+[node name="Bandits15" parent="." instance=ExtResource( 8 )]
+position = Vector2( 1086.32, -420.456 )
+
+[node name="Bandits16" parent="." instance=ExtResource( 8 )]
+position = Vector2( 368.173, -495.207 )
+
+[node name="Bandits17" parent="." instance=ExtResource( 8 )]
+position = Vector2( 701.883, -762.175 )
+
+[node name="Bandits18" parent="." instance=ExtResource( 8 )]
+position = Vector2( 1251.84, -767.514 )
+
+[node name="Bandits19" parent="." instance=ExtResource( 8 )]
+position = Vector2( 1729.71, -764.844 )
+
+[node name="Bandits20" parent="." instance=ExtResource( 8 )]
+position = Vector2( 2050.28, 530.816 )
+
+[node name="Bandits21" parent="." instance=ExtResource( 8 )]
+position = Vector2( 2386.45, 676.783 )
+
+[node name="Bandits22" parent="." instance=ExtResource( 8 )]
+position = Vector2( 2170.21, 532.62 )
+
+[node name="Bandits23" parent="." instance=ExtResource( 8 )]
+position = Vector2( 2170.21, 682.122 )
+
+[node name="Bandits24" parent="." instance=ExtResource( 8 )]
+position = Vector2( 2002.02, 663.434 )
+
 [node name="YSort" type="YSort" parent="."]
 
 [node name="Oak" parent="YSort" instance=ExtResource( 5 )]
@@ -281,9 +353,6 @@ scale = Vector2( 1.5, 1.5 )
 [node name="Pine2" parent="YSort" instance=ExtResource( 4 )]
 position = Vector2( 825.149, 44.326 )
 scale = Vector2( 1.5, 1.5 )
-
-[node name="Bandits" parent="." instance=ExtResource( 8 )]
-position = Vector2( 362.616, 597.426 )
 
 [connection signal="area_entered" from="ToVillage" to="." method="_on_ToVillage_area_entered"]
 [connection signal="area_entered" from="ToMine" to="." method="_on_ToMine_area_entered"]
