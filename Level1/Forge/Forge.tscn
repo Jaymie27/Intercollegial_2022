@@ -1,20 +1,29 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Level1/Forge/Forge.tres" type="TileSet" id=1]
 [ext_resource path="res://MC/MC.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Level1/Forge/Forge.cs" type="Script" id=3]
 
-[sub_resource type="CapsuleShape2D" id=1]
-radius = 22.4778
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 41.0336, 28.0642 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 14.0049, 312.497 )
+extents = Vector2( 83.9073, 48.8476 )
 
-[sub_resource type="AnimationNodeStateMachinePlayback" id=3]
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 73.9659, 54.1974 )
 
-[sub_resource type="CapsuleShape2D" id=4]
-radius = 8.67084
-height = 0.0
+[sub_resource type="RectangleShape2D" id=4]
+
+[sub_resource type="CapsuleShape2D" id=5]
+radius = 5.557
+height = 5.419
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=6]
+
+[sub_resource type="CapsuleShape2D" id=7]
+radius = 5.557
+height = 5.419
 
 [node name="Forge" type="Node2D"]
 script = ExtResource( 3 )
@@ -22,8 +31,10 @@ script = ExtResource( 3 )
 [node name="ViewportContainer" type="ViewportContainer" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_right = 1025.0
-margin_bottom = 600.0
+margin_left = 0.195496
+margin_top = 0.943886
+margin_right = 1025.2
+margin_bottom = 600.944
 stretch = true
 __meta__ = {
 "_edit_use_anchors_": false
@@ -34,6 +45,24 @@ size = Vector2( 1025, 600 )
 handle_input_locally = false
 render_target_update_mode = 3
 
+[node name="LZone" type="Area2D" parent="ViewportContainer/Viewport"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ViewportContainer/Viewport/LZone"]
+position = Vector2( 628.579, 212.145 )
+shape = SubResource( 1 )
+
+[node name="FZone" type="Area2D" parent="ViewportContainer/Viewport"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ViewportContainer/Viewport/FZone"]
+position = Vector2( 435.718, 211.502 )
+shape = SubResource( 2 )
+
+[node name="Tzone" type="Area2D" parent="ViewportContainer/Viewport"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ViewportContainer/Viewport/Tzone"]
+position = Vector2( 199.024, 147.868 )
+shape = SubResource( 3 )
+
 [node name="Area2D" type="Area2D" parent="ViewportContainer/Viewport"]
 light_mask = 3
 position = Vector2( -0.00012207, -3.05176e-05 )
@@ -42,7 +71,7 @@ collision_mask = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ViewportContainer/Viewport/Area2D"]
 position = Vector2( 881.81, 85.6249 )
 rotation = -1.53764
-shape = SubResource( 1 )
+shape = SubResource( 4 )
 
 [node name="Ground" type="TileMap" parent="ViewportContainer/Viewport"]
 scale = Vector2( 2, 2 )
@@ -144,19 +173,20 @@ position = Vector2( -310, 111.124 )
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ViewportContainer/Viewport/StaticBody2D"]
-position = Vector2( 305.375, 190.75 )
-shape = SubResource( 2 )
+position = Vector2( 0.187, 17.024 )
+scale = Vector2( 1.614, 1.03 )
+shape = SubResource( 5 )
 
 [node name="MC" parent="ViewportContainer/Viewport" instance=ExtResource( 2 )]
 position = Vector2( 883.941, 199.469 )
 scale = Vector2( 3, 3 )
 
 [node name="AnimationTree" parent="ViewportContainer/Viewport/MC" index="2"]
-parameters/playback = SubResource( 3 )
+parameters/playback = SubResource( 6 )
 
 [node name="CollisionShape2D" parent="ViewportContainer/Viewport/MC" index="3"]
 position = Vector2( 0.187042, 17.024 )
-shape = SubResource( 4 )
+shape = SubResource( 7 )
 
 [node name="Camera2D" parent="ViewportContainer/Viewport/MC" index="4"]
 current = false
@@ -164,8 +194,82 @@ current = false
 [node name="ennemyDetector" parent="ViewportContainer/Viewport/MC" index="8"]
 collision_layer = 2
 
+[node name="t" type="Label" parent="."]
+visible = false
+modulate = Color( 0.85098, 1, 0, 1 )
+self_modulate = Color( 0.921569, 1, 0, 1 )
+margin_left = 146.523
+margin_top = 64.7094
+margin_right = 265.523
+margin_bottom = 86.7094
+text = "Non disponible"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="f" type="Label" parent="."]
+visible = false
+modulate = Color( 0.85098, 1, 0, 1 )
+self_modulate = Color( 0.921569, 1, 0, 1 )
+margin_left = 383.502
+margin_top = 80.7456
+margin_right = 502.502
+margin_bottom = 102.746
+text = "Non disponible"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="l" type="Label" parent="."]
+visible = false
+modulate = Color( 0.85098, 1, 0, 1 )
+self_modulate = Color( 0.921569, 1, 0, 1 )
+margin_left = 573.264
+margin_top = 88.7637
+margin_right = 692.264
+margin_bottom = 110.764
+text = "Non disponible"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_left = 119.123
+margin_top = 42.0048
+margin_right = 270.124
+margin_bottom = 58.0048
+text = "Tremper les ressources"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="."]
+margin_left = 392.638
+margin_top = 57.9188
+margin_right = 442.638
+margin_bottom = 73.9188
+text = "Forger"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label3" type="Label" parent="."]
+margin_left = 564.321
+margin_top = 58.7339
+margin_right = 696.321
+margin_bottom = 72.7339
+text = "Emporter la livraison"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="area_entered" from="ViewportContainer/Viewport/LZone" to="." method="_on_LZone_area_entered"]
+[connection signal="area_exited" from="ViewportContainer/Viewport/LZone" to="." method="_on_LZone_area_exited"]
+[connection signal="area_entered" from="ViewportContainer/Viewport/FZone" to="." method="_on_FZone_area_entered"]
+[connection signal="area_exited" from="ViewportContainer/Viewport/FZone" to="." method="_on_FZone_area_exited"]
+[connection signal="area_entered" from="ViewportContainer/Viewport/Tzone" to="." method="_on_Tzone_area_entered"]
+[connection signal="area_exited" from="ViewportContainer/Viewport/Tzone" to="." method="_on_Tzone_area_exited"]
 [connection signal="area_entered" from="ViewportContainer/Viewport/Area2D" to="." method="_on_Area2D_area_entered"]
-[connection signal="area_exited" from="ViewportContainer/Viewport/Area2D" to="." method="_on_Area2D_area_exited"]
 
 [editable path="ViewportContainer/Viewport/MC"]
 [editable path="ViewportContainer/Viewport/MC/HitboxPivot/Hitbox"]

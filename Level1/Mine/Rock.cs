@@ -7,6 +7,8 @@ public class Rock : StaticBody2D
 	
 	Label information;
 	
+	Color red = new Color(255, 0, 0, 255);
+	
 	public override void _Ready()
 	{
 		information = GetNode<Label>("Label");
@@ -25,7 +27,17 @@ public class Rock : StaticBody2D
 		if(area.IsInGroup("player"))
 		{
 			information.Visible = true;
-			canTake = true;
+			if(MC.ressources < 20)
+			{
+				
+				canTake = true;
+			}
+			else
+			{
+				information.Modulate = red;
+				information.Text = "Le sac est plein";
+			}
+			
 		}
 	}
 	
@@ -46,6 +58,10 @@ public class Rock : StaticBody2D
 			{
 				if(canTake)
 				{
+					if(MC.ressources < 20)
+					{
+						MC.ressources ++;
+					}
 					QueueFree();
 				}
 			}

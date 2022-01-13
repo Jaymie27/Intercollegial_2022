@@ -2,8 +2,7 @@ using Godot;
 using System;
 
 public class Forge : Node2D
-{
-	public bool isEntering;	
+{		
 	
 	Label T;
 	
@@ -11,19 +10,27 @@ public class Forge : Node2D
 	
 	Label L;
 	
+	Label label;
+	
+	Label label2;
+	
+	Label label3;
+	
+	Color green = new Color(0,254,4,255);
+	
 	public override void _Ready()
 	{
-		isEntering = true;
-		T = GetNode<Label>("Label");
-		F = GetNode<Label>("Label2");
-		L = GetNode<Label>("Label3");
+		T = GetNode<Label>("t");
+		F = GetNode<Label>("f");
+		L = GetNode<Label>("l");
 	}
+	
 	
 	private void _on_Area2D_area_entered(Area2D area)
 	{				
 		if(area.IsInGroup("player"))
 		{
-			GetTree().ChangeScene("res://test.tscn");
+			GetTree().ChangeScene("res://Level1/Mine/Mine.tscn");
 		}
 	}
 	
@@ -38,8 +45,10 @@ public class Forge : Node2D
 	private void _on_Tzone_area_exited(Area2D area)
 	{
 		if(area.IsInGroup("player"))
-		{
-			T.Visible = false;
+		{ 
+			
+				T.Visible = false;
+		
 		}
 	}
 	

@@ -6,7 +6,7 @@ public class MC : KinematicBody2D
 
 	[Export]
 	public Vector2 Velocity;
-
+	public static string voices = "en";
 	const int MAXSPEED = 200;
 	const int ACCELERATION = 525;
 	private int FRICTION = 1000;
@@ -22,6 +22,10 @@ public class MC : KinematicBody2D
 	bool[] timer = new bool[300];
 
 	public static Vector2 pos;
+	
+	public static int ressources = 0;
+	
+	Label score;
 	
 	public static string language = "en";
 
@@ -44,6 +48,7 @@ public class MC : KinematicBody2D
 		animationTree = GetNode<AnimationTree>("AnimationTree");
 		animationState = (AnimationNodeStateMachinePlayback)animationTree.Get("parameters/playback");
 		pos = this.GlobalPosition;
+		score = GetNode<Label>("Camera2D/CanvasLayer/score");
 	}
 
 
@@ -62,7 +67,8 @@ public class MC : KinematicBody2D
 	}
 
   	public override void _PhysicsProcess(float delta)
-  	{	
+  	{					
+		score.Text = ressources.ToString();
 		tick();
 		pos = this.GlobalPosition;	  
 		switch(state){

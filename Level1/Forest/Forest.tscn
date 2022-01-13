@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Level1/Mine/mine.tres" type="TileSet" id=1]
 [ext_resource path="res://Level1/Forest/Forest.tres" type="TileSet" id=2]
@@ -6,22 +6,24 @@
 [ext_resource path="res://Level1/Forest/Pine.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Level1/Forest/Oak.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Level1/Forest/Fir.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Level1/Forest/Forest.cs" type="Script" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 253.39, 10 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 36.6577, 56.4246 )
+extents = Vector2( 30.6558, 32.2273 )
 
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 353.828, 10 )
 
-[sub_resource type="RectangleShape2D" id=5]
+[sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 1302.84, 13.0464 )
 
-[sub_resource type="AnimationNodeStateMachinePlayback" id=4]
+[sub_resource type="AnimationNodeStateMachinePlayback" id=5]
 
 [node name="Forest" type="Node2D"]
+script = ExtResource( 7 )
 
 [node name="Grass" type="TileMap" parent="."]
 scale = Vector2( 2, 2 )
@@ -62,7 +64,7 @@ format = 1
 tile_data = PoolIntArray( -1114138, 4, 0, -1114123, 4, 0, -786462, 4, 0, 131061, 4, 0, 262111, 4, 0, 327647, 3, 0, 327663, 4, 0, 393183, 3, 0, 458719, 3, 0 )
 
 [node name="DownRightRoad" type="TileMap" parent="."]
-rotation = 4.71239
+rotation = -1.5708
 scale = Vector2( 2, 2 )
 tile_set = ExtResource( 2 )
 cell_size = Vector2( 32, 32 )
@@ -85,9 +87,11 @@ rotation = 1.5708
 shape = SubResource( 1 )
 
 [node name="ToMine" type="Area2D" parent="."]
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ToMine"]
-position = Vector2( 2396.29, -765.9 )
+position = Vector2( 2396.96, -781.251 )
+rotation = 0.127409
 shape = SubResource( 2 )
 
 [node name="ToShipping" type="Area2D" parent="."]
@@ -102,14 +106,14 @@ position = Vector2( 254.271, -12.7136 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2( 1013.86, -860.549 )
-shape = SubResource( 5 )
+shape = SubResource( 4 )
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
 position = Vector2( 254.271, -12.7136 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
 position = Vector2( 1016.22, 1237.2 )
-shape = SubResource( 5 )
+shape = SubResource( 4 )
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="."]
 position = Vector2( 254.271, -12.7136 )
@@ -117,7 +121,7 @@ position = Vector2( 254.271, -12.7136 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
 position = Vector2( 2317.97, 254.958 )
 rotation = 1.5708
-shape = SubResource( 5 )
+shape = SubResource( 4 )
 
 [node name="StaticBody2D4" type="StaticBody2D" parent="."]
 position = Vector2( 254.271, -12.7136 )
@@ -125,137 +129,16 @@ position = Vector2( 254.271, -12.7136 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
 position = Vector2( -263.424, 173.362 )
 rotation = 1.5708
-shape = SubResource( 5 )
-
-[node name="Oak" parent="." instance=ExtResource( 5 )]
-position = Vector2( 1501.02, 253.85 )
-scale = Vector2( 2, 2 )
-
-[node name="Fir" parent="." instance=ExtResource( 6 )]
-position = Vector2( 1293.67, 54.5581 )
-scale = Vector2( 1.5, 1.5 )
-
-[node name="Pine2" parent="." instance=ExtResource( 4 )]
-position = Vector2( 825.149, 44.326 )
-scale = Vector2( 1.5, 1.5 )
-
-[node name="Pine" parent="." instance=ExtResource( 4 )]
-position = Vector2( 513.022, 503.613 )
-scale = Vector2( 1.5, 1.5 )
-
-[node name="Fir2" parent="." instance=ExtResource( 6 )]
-position = Vector2( 531.844, 1014.96 )
-scale = Vector2( 1.5, 1.5 )
-
-[node name="Oak2" parent="." instance=ExtResource( 5 )]
-position = Vector2( 506.556, 65.1061 )
-scale = Vector2( 2, 2 )
-
-[node name="Oak3" parent="." instance=ExtResource( 5 )]
-position = Vector2( 1101.91, 500.69 )
-scale = Vector2( 2, 2 )
-
-[node name="Fir3" parent="." instance=ExtResource( 6 )]
-position = Vector2( 970.726, -619.29 )
-scale = Vector2( 1.5, 1.5 )
-
-[node name="Fir4" parent="." instance=ExtResource( 6 )]
-position = Vector2( 1264.25, -523.79 )
-scale = Vector2( 1.5, 1.5 )
-
-[node name="Fir5" parent="." instance=ExtResource( 6 )]
-position = Vector2( 448.192, -592.499 )
-scale = Vector2( 1.5, 1.5 )
-
-[node name="Fir6" parent="." instance=ExtResource( 6 )]
-position = Vector2( 581.174, -247.027 )
-scale = Vector2( 1.5, 1.5 )
-
-[node name="Fir7" parent="." instance=ExtResource( 6 )]
-position = Vector2( 1979.3, -331.888 )
-scale = Vector2( 1.5, 1.5 )
-
-[node name="Fir8" parent="." instance=ExtResource( 6 )]
-position = Vector2( 2467.94, 203.474 )
-scale = Vector2( 1.5, 1.5 )
-
-[node name="Fir9" parent="." instance=ExtResource( 6 )]
-position = Vector2( 2201.35, -593.384 )
-scale = Vector2( 1.5, 1.5 )
-
-[node name="Fir10" parent="." instance=ExtResource( 6 )]
-position = Vector2( 2203.5, -339.227 )
-scale = Vector2( 1.5, 1.5 )
-
-[node name="Fir11" parent="." instance=ExtResource( 6 )]
-position = Vector2( 2448.57, 1102.24 )
-scale = Vector2( 1.5, 1.5 )
-
-[node name="Pine3" parent="." instance=ExtResource( 4 )]
-position = Vector2( 1669, -539.902 )
-scale = Vector2( 1.5, 1.5 )
-
-[node name="Pine4" parent="." instance=ExtResource( 4 )]
-position = Vector2( 2494.45, 726.844 )
-scale = Vector2( 1.5, 1.5 )
-
-[node name="Pine5" parent="." instance=ExtResource( 4 )]
-position = Vector2( 1488.03, -536.727 )
-scale = Vector2( 1.5, 1.5 )
-
-[node name="Pine6" parent="." instance=ExtResource( 4 )]
-position = Vector2( 1716.62, 939.556 )
-scale = Vector2( 1.5, 1.5 )
-
-[node name="Pine7" parent="." instance=ExtResource( 4 )]
-position = Vector2( 1192.78, 736.369 )
-scale = Vector2( 1.5, 1.5 )
-
-[node name="Pine8" parent="." instance=ExtResource( 4 )]
-position = Vector2( 1999.18, 247.449 )
-scale = Vector2( 1.5, 1.5 )
-
-[node name="Pine9" parent="." instance=ExtResource( 4 )]
-position = Vector2( 1427.71, 987.178 )
-scale = Vector2( 1.5, 1.5 )
-
-[node name="Pine10" parent="." instance=ExtResource( 4 )]
-position = Vector2( 683.314, 504.258 )
-scale = Vector2( 1.5, 1.5 )
-
-[node name="Oak4" parent="." instance=ExtResource( 5 )]
-position = Vector2( 783.229, 755.418 )
-scale = Vector2( 2, 2 )
-
-[node name="Oak5" parent="." instance=ExtResource( 5 )]
-position = Vector2( 2281.74, 514.133 )
-scale = Vector2( 2, 2 )
-
-[node name="Oak6" parent="." instance=ExtResource( 5 )]
-position = Vector2( 1964.26, 514.133 )
-scale = Vector2( 2, 2 )
-
-[node name="Oak7" parent="." instance=ExtResource( 5 )]
-position = Vector2( 1713.45, 253.799 )
-scale = Vector2( 2, 2 )
-
-[node name="Oak8" parent="." instance=ExtResource( 5 )]
-position = Vector2( 1037.21, -108.129 )
-scale = Vector2( 2, 2 )
-
-[node name="Oak9" parent="." instance=ExtResource( 5 )]
-position = Vector2( 1310.25, -308.141 )
-scale = Vector2( 2, 2 )
-
-[node name="Oak10" parent="." instance=ExtResource( 5 )]
-position = Vector2( 1726.14, -317.666 )
-scale = Vector2( 2, 2 )
+shape = SubResource( 4 )
 
 [node name="MC" parent="." instance=ExtResource( 3 )]
 position = Vector2( 73.2027, 591.18 )
 
+[node name="Sprite" parent="MC" index="0"]
+frame = 21
+
 [node name="AnimationTree" parent="MC" index="2"]
-parameters/playback = SubResource( 4 )
+parameters/playback = SubResource( 5 )
 
 [node name="Camera2D" parent="MC" index="4"]
 limit_left = 0
@@ -267,6 +150,135 @@ limit_bottom = 1215
 anchor_left = 0.00164235
 anchor_right = 1.00164
 
+[node name="YSort" type="YSort" parent="."]
+
+[node name="Oak" parent="YSort" instance=ExtResource( 5 )]
+position = Vector2( 1501.02, 253.85 )
+scale = Vector2( 2, 2 )
+
+[node name="Fir" parent="YSort" instance=ExtResource( 6 )]
+position = Vector2( 1293.67, 54.5581 )
+scale = Vector2( 1.5, 1.5 )
+
+[node name="Fir2" parent="YSort" instance=ExtResource( 6 )]
+position = Vector2( 531.844, 1014.96 )
+scale = Vector2( 1.5, 1.5 )
+
+[node name="Oak2" parent="YSort" instance=ExtResource( 5 )]
+position = Vector2( 506.556, 65.1061 )
+scale = Vector2( 2, 2 )
+
+[node name="Fir3" parent="YSort" instance=ExtResource( 6 )]
+position = Vector2( 970.726, -619.29 )
+scale = Vector2( 1.5, 1.5 )
+
+[node name="Fir4" parent="YSort" instance=ExtResource( 6 )]
+position = Vector2( 1264.25, -523.79 )
+scale = Vector2( 1.5, 1.5 )
+
+[node name="Fir6" parent="YSort" instance=ExtResource( 6 )]
+position = Vector2( 581.174, -247.027 )
+scale = Vector2( 1.5, 1.5 )
+
+[node name="Fir7" parent="YSort" instance=ExtResource( 6 )]
+position = Vector2( 1979.3, -331.888 )
+scale = Vector2( 1.5, 1.5 )
+
+[node name="Fir11" parent="YSort" instance=ExtResource( 6 )]
+position = Vector2( 2448.57, 1102.24 )
+scale = Vector2( 1.5, 1.5 )
+
+[node name="Pine5" parent="YSort" instance=ExtResource( 4 )]
+position = Vector2( 1488.03, -536.727 )
+scale = Vector2( 1.5, 1.5 )
+
+[node name="Pine6" parent="YSort" instance=ExtResource( 4 )]
+position = Vector2( 1716.62, 939.556 )
+scale = Vector2( 1.5, 1.5 )
+
+[node name="Pine7" parent="YSort" instance=ExtResource( 4 )]
+position = Vector2( 1192.78, 736.369 )
+scale = Vector2( 1.5, 1.5 )
+
+[node name="Pine10" parent="YSort" instance=ExtResource( 4 )]
+position = Vector2( 683.314, 504.258 )
+scale = Vector2( 1.5, 1.5 )
+
+[node name="Oak4" parent="YSort" instance=ExtResource( 5 )]
+position = Vector2( 783.229, 755.418 )
+scale = Vector2( 2, 2 )
+
+[node name="Oak6" parent="YSort" instance=ExtResource( 5 )]
+position = Vector2( 1964.26, 514.133 )
+scale = Vector2( 2, 2 )
+
+[node name="Oak7" parent="YSort" instance=ExtResource( 5 )]
+position = Vector2( 1713.45, 253.799 )
+scale = Vector2( 2, 2 )
+
+[node name="Oak8" parent="YSort" instance=ExtResource( 5 )]
+position = Vector2( 1037.21, -108.129 )
+scale = Vector2( 2, 2 )
+
+[node name="Oak10" parent="YSort" instance=ExtResource( 5 )]
+position = Vector2( 1726.14, -317.666 )
+scale = Vector2( 2, 2 )
+
+[node name="Oak9" parent="YSort" instance=ExtResource( 5 )]
+position = Vector2( 1310.25, -308.141 )
+scale = Vector2( 2, 2 )
+
+[node name="Oak5" parent="YSort" instance=ExtResource( 5 )]
+position = Vector2( 2281.74, 514.133 )
+scale = Vector2( 2, 2 )
+
+[node name="Pine9" parent="YSort" instance=ExtResource( 4 )]
+position = Vector2( 1427.71, 987.178 )
+scale = Vector2( 1.5, 1.5 )
+
+[node name="Pine8" parent="YSort" instance=ExtResource( 4 )]
+position = Vector2( 1999.18, 247.449 )
+scale = Vector2( 1.5, 1.5 )
+
+[node name="Pine3" parent="YSort" instance=ExtResource( 4 )]
+position = Vector2( 1669, -539.902 )
+scale = Vector2( 1.5, 1.5 )
+
+[node name="Pine4" parent="YSort" instance=ExtResource( 4 )]
+position = Vector2( 2494.45, 726.844 )
+scale = Vector2( 1.5, 1.5 )
+
+[node name="Fir10" parent="YSort" instance=ExtResource( 6 )]
+position = Vector2( 2203.5, -339.227 )
+scale = Vector2( 1.5, 1.5 )
+
+[node name="Fir9" parent="YSort" instance=ExtResource( 6 )]
+position = Vector2( 2201.35, -593.384 )
+scale = Vector2( 1.5, 1.5 )
+
+[node name="Fir8" parent="YSort" instance=ExtResource( 6 )]
+position = Vector2( 2467.94, 203.474 )
+scale = Vector2( 1.5, 1.5 )
+
+[node name="Fir5" parent="YSort" instance=ExtResource( 6 )]
+position = Vector2( 448.192, -592.499 )
+scale = Vector2( 1.5, 1.5 )
+
+[node name="Oak3" parent="YSort" instance=ExtResource( 5 )]
+position = Vector2( 1101.91, 500.69 )
+scale = Vector2( 2, 2 )
+
+[node name="Pine" parent="YSort" instance=ExtResource( 4 )]
+position = Vector2( 513.022, 503.613 )
+scale = Vector2( 1.5, 1.5 )
+
+[node name="Pine2" parent="YSort" instance=ExtResource( 4 )]
+position = Vector2( 825.149, 44.326 )
+scale = Vector2( 1.5, 1.5 )
+[connection signal="area_entered" from="ToMine" to="." method="_on_ToMine_area_entered"]
+
 [editable path="MC"]
+
 [editable path="MC/HitboxPivot/Hitbox"]
+
 [editable path="MC/Hurtbox"]

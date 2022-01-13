@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Level1/Mine/mine.tres" type="TileSet" id=1]
 [ext_resource path="res://MC/MC.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Level1/Mine/Rock.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Level1/Mine/Mushroom.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Level1/Mine/Mine.cs" type="Script" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 5.39581, 322.081 )
@@ -11,6 +12,7 @@ extents = Vector2( 5.39581, 322.081 )
 [sub_resource type="AnimationNodeStateMachinePlayback" id=2]
 
 [node name="Mine" type="Node2D"]
+script = ExtResource( 5 )
 
 [node name="MineFloor" type="TileMap" parent="."]
 tile_set = ExtResource( 1 )
@@ -293,7 +295,7 @@ scale = Vector2( 1.2, 1.2 )
 [node name="Mushroom22" parent="." instance=ExtResource( 4 )]
 position = Vector2( 1450.74, 487.076 )
 scale = Vector2( 1.2, 1.2 )
-
+[connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
 [connection signal="poison" from="Mushroom1" to="MC" method="_on_Mushroom1_poison"]
 [connection signal="poison" from="Mushroom2" to="MC" method="_on_Mushroom1_poison"]
 [connection signal="poison" from="Mushroom3" to="MC" method="_on_Mushroom1_poison"]
@@ -318,17 +320,31 @@ scale = Vector2( 1.2, 1.2 )
 [connection signal="poison" from="Mushroom22" to="MC" method="_on_Mushroom1_poison"]
 
 [editable path="Rock2"]
+
 [editable path="Rock6"]
+
 [editable path="Rock8"]
+
 [editable path="Rock9"]
+
 [editable path="Rock11"]
+
 [editable path="Rock15"]
+
 [editable path="Rock18"]
+
 [editable path="Rock19"]
+
 [editable path="Rock22"]
+
 [editable path="Rock25"]
+
 [editable path="Rock28"]
+
 [editable path="Rock33"]
+
 [editable path="MC"]
+
 [editable path="MC/HitboxPivot/Hitbox"]
+
 [editable path="MC/Hurtbox"]
