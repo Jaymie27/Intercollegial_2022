@@ -35,7 +35,7 @@ public class Rock : StaticBody2D
 			else
 			{
 				information.Modulate = red;
-				information.Text = "Le sac est plein";
+				information.Text = "Plein";
 			}
 			
 		}

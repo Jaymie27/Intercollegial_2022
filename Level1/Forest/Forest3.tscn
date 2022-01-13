@@ -12,7 +12,7 @@
 extents = Vector2( 253.39, 10 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 32.959, 37.2656 )
+extents = Vector2( 30.6558, 32.2273 )
 
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 353.828, 10 )
@@ -90,7 +90,7 @@ shape = SubResource( 1 )
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ToMine"]
-position = Vector2( 2396.29, -778.581 )
+position = Vector2( 2396.96, -781.251 )
 rotation = 0.127409
 shape = SubResource( 2 )
 
@@ -131,13 +131,13 @@ position = Vector2( -263.424, 173.362 )
 rotation = 1.5708
 shape = SubResource( 4 )
 
-[node name="MC" parent="StaticBody2D4" instance=ExtResource( 3 )]
-position = Vector2( 2106.21, -662.787 )
+[node name="MC" parent="." instance=ExtResource( 3 )]
+position = Vector2( 2483.95, 480.368 )
 
-[node name="AnimationTree" parent="StaticBody2D4/MC" index="2"]
+[node name="AnimationTree" parent="MC" index="2"]
 parameters/playback = SubResource( 5 )
 
-[node name="Camera2D" parent="StaticBody2D4/MC" index="4"]
+[node name="Camera2D" parent="MC" index="4"]
 limit_left = 0
 limit_top = -895
 limit_right = 2560
@@ -272,4 +272,8 @@ scale = Vector2( 1.5, 1.5 )
 [connection signal="area_entered" from="ToMine" to="." method="_on_ToMine_area_entered"]
 [connection signal="area_entered" from="ToShipping" to="." method="_on_ToShipping_area_entered"]
 
-[editable path="StaticBody2D4/MC"]
+[editable path="MC"]
+
+[editable path="MC/HitboxPivot/Hitbox"]
+
+[editable path="MC/Hurtbox"]

@@ -10,12 +10,13 @@ config_version=4
 
 _global_script_classes=[  ]
 _global_script_class_icons={
+
 }
 
 [application]
 
 config/name="Intercollegial_2022"
-run/main_scene="res://OptionsMenu/OptionsMenu.tscn"
+run/main_scene="res://Level1/Village/Village.tscn"
 config/icon="res://icon.png"
 
 [display]

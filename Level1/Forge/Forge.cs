@@ -10,11 +10,19 @@ public class Forge : Node2D
 	
 	Label L;
 	
-	Label label;
+	bool canT = false;
 	
-	Label label2;
+	bool canF = false;
 	
-	Label label3;
+	bool canL = false;
+	
+	bool isFrontT = false;
+	
+	bool isFrontF = false;
+	
+	bool isFrontL = false;
+	
+	public static bool delievery_ready = false;
 	
 	Color green = new Color(0,254,4,255);
 	
@@ -25,12 +33,22 @@ public class Forge : Node2D
 		L = GetNode<Label>("l");
 	}
 	
+	public override void _Process(float delta)
+  	{	
+		if(MC.ressources == 20 && MC.rocks == 5)
+		{
+			T.Visible = true;
+			T.Modulate = green;
+			T.Text = "appuyer sur E";
+			canT = true;
+		}
+	}	
 	
 	private void _on_Area2D_area_entered(Area2D area)
 	{				
 		if(area.IsInGroup("player"))
 		{
-			GetTree().ChangeScene("res://Level1/Mine/Mine.tscn");
+			GetTree().ChangeScene("res://Level1/Village/Village.tscn");
 		}
 	}
 	
@@ -39,6 +57,7 @@ public class Forge : Node2D
 		if(area.IsInGroup("player"))
 		{
 			T.Visible = true;
+			isFrontT = true;
 		}
 	}
 	
@@ -47,8 +66,11 @@ public class Forge : Node2D
 		if(area.IsInGroup("player"))
 		{ 
 			
+			if(T.Modulate != green)
+			{
 				T.Visible = false;
-		
+			}	
+			isFrontT = false;
 		}
 	}
 	
@@ -57,6 +79,7 @@ public class Forge : Node2D
 		if(area.IsInGroup("player"))
 		{
 			F.Visible = true;
+			isFrontF = true;
 		}
 	}
 	
@@ -64,7 +87,11 @@ public class Forge : Node2D
 	{
 	   	if(area.IsInGroup("player"))
 		{
-			F.Visible = false;
+			if(F.Modulate != green)
+			{
+				F.Visible = false;
+			}			
+			isFrontF = false;
 		}
 	}
 	
@@ -73,6 +100,7 @@ public class Forge : Node2D
 		if(area.IsInGroup("player"))
 		{
 			L.Visible = true;
+			isFrontL = true;
 		}
 	}
 	
@@ -80,8 +108,52 @@ public class Forge : Node2D
 	{
 	   	if(area.IsInGroup("player"))
 		{
-			L.Visible = false;
+			if(L.Modulate != green)
+			{
+				L.Visible = false;
+			}	
+			isFrontL = false;
 		}
+	}
+	
+	public override void _UnhandledInput(InputEvent @event)
+	{
+		if (@event is InputEventKey eventKey)
+			if (eventKey.Pressed && eventKey.Scancode == (int)KeyList.E)
+			{
+				if(canT && isFrontT)
+				{
+					MC.ressources = 0;
+					MC.rocks = 0;
+					T.Text = "Fait";
+					canT = false;
+					canF = true;
+					F.Visible = true;
+					F.Text = "appuyer sur E";
+					F.Modulate = green;
+				}
+				
+				if(canF && isFrontF)
+				{
+					F.Text = "Fait";
+					canF = false;
+					canL = true;
+					L.Visible = true;
+					L.Text = "appuyer sur E";
+					L.Modulate = green;
+				}
+			
+			
+				if(canL && isFrontL)
+				{
+					L.Text = "Vous pouvez livrer !";
+					canL = false;
+					delievery_ready = true;
+				}	
+			}
+			
+				
+			
 	}
 }
 

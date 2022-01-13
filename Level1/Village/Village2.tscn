@@ -89,7 +89,10 @@ position = Vector2( 141.38, 335 )
 shape = SubResource( 3 )
 
 [node name="MC" parent="." instance=ExtResource( 3 )]
-position = Vector2( 143.183, 382.295 )
+position = Vector2( 946.265, 414.857 )
+
+[node name="Sprite" parent="MC" index="0"]
+frame = 20
 
 [node name="AnimationTree" parent="MC" index="2"]
 parameters/playback = SubResource( 4 )
@@ -99,12 +102,6 @@ limit_left = 0
 limit_top = 0
 limit_right = 1025
 limit_bottom = 600
-
-[node name="HUD" parent="MC/Camera2D/CanvasLayer" index="0"]
-margin_left = -3.45763
-margin_top = -12.9397
-margin_right = -3.45764
-margin_bottom = -12.9397
 [connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
 [connection signal="area_entered" from="Area2D2" to="." method="_on_Area2D2_area_entered"]
 

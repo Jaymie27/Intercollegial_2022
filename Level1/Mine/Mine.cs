@@ -14,8 +14,7 @@ public class Mine : Node2D
 	{
 	   	if(area.IsInGroup("player"))
 		{
-			//GetTree().ChangeScene("res://Level1/Forest/Forest2.tscn");
-			GetTree().ChangeScene("res://Level1/Forge/Forge.tscn");
+			GetTree().ChangeScene("res://Level1/Forest/Forest2.tscn");
 		}
 	}
 

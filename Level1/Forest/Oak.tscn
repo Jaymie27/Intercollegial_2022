@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Level1/Forest/Sprites/tree1.png" type="Texture" id=1]
+[ext_resource path="res://Level1/Forest/Oak.cs" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 6.20927, 10.4101 )
@@ -10,6 +11,8 @@ radius = 24.5481
 height = 56.2167
 
 [node name="Oak" type="StaticBody2D"]
+collision_mask = 3
+script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
@@ -23,3 +26,16 @@ collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource( 2 )
+
+[node name="Label" type="Label" parent="."]
+visible = false
+margin_left = -57.9846
+margin_top = -59.5749
+margin_right = 66.0154
+margin_bottom = -45.5749
+text = "appuyer sur espace"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_Area2D_area_exited"]

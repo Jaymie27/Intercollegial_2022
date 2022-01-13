@@ -25,7 +25,13 @@ public class MC : KinematicBody2D
 	
 	public static int ressources = 0;
 	
+	public static int rocks = 0;
+	
 	Label score;
+	
+	Label ScoreWood;
+	
+	Label livraison;
 	
 	public static string language = "en";
 
@@ -49,6 +55,8 @@ public class MC : KinematicBody2D
 		animationState = (AnimationNodeStateMachinePlayback)animationTree.Get("parameters/playback");
 		pos = this.GlobalPosition;
 		score = GetNode<Label>("Camera2D/CanvasLayer/score");
+		ScoreWood = GetNode<Label>("Camera2D/CanvasLayer/scoreWood");
+		livraison = GetNode<Label>("Camera2D/CanvasLayer/bool");
 	}
 
 
@@ -67,7 +75,12 @@ public class MC : KinematicBody2D
 	}
 
   	public override void _PhysicsProcess(float delta)
-  	{					
+  	{	
+		if(Forge.delievery_ready)
+		{
+			livraison.Text = "oui";
+		}
+		ScoreWood.Text = rocks.ToString();				
 		score.Text = ressources.ToString();
 		tick();
 		pos = this.GlobalPosition;	  

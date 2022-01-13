@@ -1,0 +1,17 @@
+[gd_scene format=2]
+
+[node name="EndingScene" type="Node2D"]
+
+[node name="Label" type="Label" parent="."]
+modulate = Color( 1, 0, 0, 1 )
+margin_left = 375.816
+margin_top = 197.239
+margin_right = 1079.82
+margin_bottom = 547.239
+text = "Fin
+
+yer 3h du matin btw
+"
+__meta__ = {
+"_edit_use_anchors_": false
+}

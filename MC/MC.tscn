@@ -1,4 +1,4 @@
-[gd_scene load_steps=63 format=2]
+[gd_scene load_steps=64 format=2]
 
 [ext_resource path="res://HUD/HUD.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Hitbox&Hurtbox/Hitbox.tscn" type="PackedScene" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://MC/MC.png" type="Texture" id=4]
 [ext_resource path="res://MC/MC.cs" type="Script" id=5]
 [ext_resource path="res://Level1/Mine/Sprites/rock1.png" type="Texture" id=6]
+[ext_resource path="res://Level1/Forest/Sprites/tree1.png" type="Texture" id=7]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Attack Down"
@@ -734,35 +735,90 @@ margin_right = -2.12128
 margin_bottom = -8.48523
 
 [node name="rock1" type="Sprite" parent="Camera2D/CanvasLayer/HUD"]
-position = Vector2( 97.2941, 14.4186 )
+position = Vector2( 76.0569, 13.4747 )
 texture = ExtResource( 6 )
+
+[node name="tree1" type="Sprite" parent="Camera2D/CanvasLayer/HUD"]
+position = Vector2( 232.56, 19.3668 )
+scale = Vector2( 0.369328, 0.33648 )
+texture = ExtResource( 7 )
 
 [node name="Label" type="Label" parent="Camera2D/CanvasLayer"]
 margin_left = 6.72717
 margin_top = 5.88628
 margin_right = 79.7272
 margin_bottom = 19.8863
-text = "Ressources"
+text = "Roches"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="number" type="Label" parent="Camera2D/CanvasLayer"]
-margin_left = 144.796
-margin_top = 6.42044
-margin_right = 179.796
-margin_bottom = 21.4204
+margin_left = 116.952
+margin_top = 5.00463
+margin_right = 151.952
+margin_bottom = 20.0046
 text = "/20"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="score" type="Label" parent="Camera2D/CanvasLayer"]
-margin_left = 129.784
-margin_top = 5.57956
-margin_right = 165.784
-margin_bottom = 22.5796
+margin_left = 99.58
+margin_top = 4.63569
+margin_right = 135.58
+margin_bottom = 21.6357
 text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="Camera2D/CanvasLayer"]
+margin_left = 185.85
+margin_top = 6.58631
+margin_right = 275.85
+margin_bottom = 27.5863
+text = "Bois"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="numberWood" type="Label" parent="Camera2D/CanvasLayer"]
+margin_left = 274.489
+margin_top = 7.44341
+margin_right = 328.489
+margin_bottom = 24.4434
+text = "/5"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="scoreWood" type="Label" parent="Camera2D/CanvasLayer"]
+margin_left = 262.863
+margin_top = 6.69383
+margin_right = 304.863
+margin_bottom = 22.6938
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="bool" type="Label" parent="Camera2D/CanvasLayer"]
+margin_left = 435.815
+margin_top = 4.67142
+margin_right = 495.815
+margin_bottom = 23.6714
+text = "non"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Livraison" type="Label" parent="Camera2D/CanvasLayer"]
+margin_left = 326.989
+margin_top = 6.32969
+margin_right = 396.989
+margin_bottom = 26.3297
+text = "Puis-je livrer? : "
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -772,7 +828,7 @@ position = Vector2( 10, 0 )
 
 [node name="Hitbox" parent="HitboxPivot" instance=ExtResource( 2 )]
 collision_layer = 0
-collision_mask = 8
+collision_mask = 11
 
 [node name="CollisionShape2D" parent="HitboxPivot/Hitbox" index="0"]
 position = Vector2( 20.5293, 0.943878 )
@@ -796,4 +852,5 @@ position = Vector2( -0.0142946, 0.264866 )
 shape = SubResource( 56 )
 
 [editable path="HitboxPivot/Hitbox"]
+
 [editable path="Hurtbox"]
